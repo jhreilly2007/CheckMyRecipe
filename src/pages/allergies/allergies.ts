@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { CardDisplayPage } from '../card-display/card-display';
 import { RecipeInfoPage } from '../recipe-info/recipe-info';
+import { SearchparamsProvider } from '../../providers/searchparams/searchparams';
 /**
  * Generated class for the AllergiesPage page.
  *
@@ -17,12 +18,13 @@ import { RecipeInfoPage } from '../recipe-info/recipe-info';
 })
 export class AllergiesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public theSearch: SearchparamsProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AllergiesPage');
   }
+
 
 public goToHome()
 {

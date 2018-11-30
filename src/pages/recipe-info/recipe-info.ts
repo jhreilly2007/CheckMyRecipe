@@ -18,7 +18,10 @@ import { CardDisplayPage } from '../card-display/card-display';
 })
 export class RecipeInfoPage {
 
+  passedObject: any;    //the object passed by navparams
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  this.passedObject = this.navParams.get('ourParam'); 
   }
 
   ionViewDidLoad() {

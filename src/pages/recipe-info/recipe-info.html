@@ -1,21 +1,82 @@
-<!--
-  Generated template for the RecipeInfoPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>RecipeInfo</ion-title>
-  </ion-navbar>
+<ion-card>
+<ion-card-content>
+
+  <img src="assets/imgs/noodles.png" style="float:left;width:325px;height:325px;"/>
+   
+   
+       <ion-card-title>
+
+     <h1>{{passedObject.name}}</h1>
+      </ion-card-title>
+
+    <p>
+      Cook our healthy, vegan stir-fry to pack in four of your 5-a-day. The hoisin sauce is 
+      made with Chinese five spice and apple cider vinegar to boost the flavour
+    </p>
+    
+    <div>
+   
+
+    <b>INGREDIENTS</b>
+  
+
+    </div>
+
+ 
+    <ion-row >
+    <ion-col full col-12>Nutritional Info </ion-col>
+   <ion-chip>
+  <ion-label padding-horizontal>Kcal</ion-label>
+  <ion-label padding-horizontal>fat</ion-label>
+  <ion-label padding-horizontal>saturates</ion-label>
+  <ion-label padding-horizontal>carbs</ion-label>
+  <ion-label padding-horizontal>sugars</ion-label>
+  <ion-label padding-horizontal>fibre</ion-label>
+  <ion-label padding-horizontal>protein</ion-label>
+  <ion-label padding-horizontal>salt</ion-label>
+		</ion-chip>
+	 </ion-row>
+
+  
+
+
+
+     <ion-fab right bottom>
+    <button ion-fab mini color="danger"><ion-icon name="share"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+      <ion-fab bottom left>
+    <button ion-fab mini color="danger"(click) = "goToCardDisplay()" ><ion-icon name="backspace"></ion-icon></button>
+     </ion-fab>
+
+        <ion-fab top right>
+    <button ion-fab mini><ion-icon name="menu"></ion-icon></button>
+       <ion-fab-list side="left">
+      <button ion-fab><ion-icon name="exit"></ion-icon></button>
+      <button ion-fab><ion-icon name="help"></ion-icon></button>
+       <button ion-fab (click) = "goToCardDisplay()"><ion-icon name="backspace"></ion-icon></button>
+       <button ion-fab (click) = "goToHome()"><ion-icon name="home"></ion-icon></button>
+    </ion-fab-list>
+      </ion-fab>
+
+   </ion-card-content>
+</ion-card>
 
 </ion-header>
 
 
 
-
+<!-- (commented out this code) 
 <ion-content padding>
+
 	<ion-item>
 		<button ion-button round outline color="danger" (click) = "goToHome()">Go To Home</button>
 	</ion-item>
@@ -28,4 +89,18 @@
 		<button ion-button round outline color="danger" (click) = "goToAllergies()">Go To Allergies</button>
 	</ion-item>
 
-</ion-content> 
+</ion-content>
+-->
+
+
+
+
+
+
+
+
+
+
+	 
+
+

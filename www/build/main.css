@@ -25673,3 +25673,119 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-bottom));
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
+
+page-allergies ion-header::after {
+  background-image: none !important;
+  border-bottom: #bbb solid 0.05rem;
+}
+
+page-allergies .tab-wrap {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  top: 4px;
+  -webkit-box-shadow: -1px 1px 3px 0px #bbb;
+  box-shadow: -1px 1px 3px 0px #bbb;
+}
+
+page-allergies input[type="radio"][name="tabs"] {
+  position: absolute;
+  z-index: -1;
+}
+
+page-allergies input[type="radio"][name="tabs"]:checked + .tab-label-content .tab-label {
+  color: #00B9DF;
+  border-left: #ddd solid 1px;
+  border-right: #ddd solid 1px;
+  font-weight: 500;
+}
+
+page-allergies input[type="radio"][name="tabs"]:checked + .tab-label-content .tab-content {
+  display: block;
+}
+
+page-allergies input[type="radio"][name="tabs"]:nth-of-type(1):checked ~ .slide {
+  left: calc((100% / 2) * 0);
+}
+
+page-allergies input[type="radio"][name="tabs"]:nth-of-type(2):checked ~ .slide {
+  left: calc((100% / 2) * 1);
+}
+
+page-allergies input[type="radio"][name="tabs"]:first-of-type:checked ~ .slide {
+  left: 0;
+}
+
+page-allergies .tab-label {
+  cursor: pointer;
+  color: #111;
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  height: 56px;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+  width: 100%;
+}
+
+page-allergies .slide {
+  background: #00B9DF;
+  width: calc(100% / 2);
+  height: 4px;
+  position: absolute;
+  left: 0;
+  top: calc(100% - 2px);
+  -webkit-transition: left 0.3s ease-out;
+  transition: left 0.3s ease-out;
+}
+
+page-allergies .tab-label-content {
+  width: 100%;
+}
+
+page-allergies .tab-label-content .tab-content {
+  position: absolute;
+  top: 100px;
+  left: 16px;
+  line-height: 130%;
+  display: none;
+}
+
+page-card-display .card-background-page ion-card {
+  position: relative;
+  text-align: center;
+}
+
+page-card-display .card-background-page .card-title {
+  position: absolute;
+  top: 36%;
+  font-size: 2.0em;
+  width: 100%;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+page-card-display .card-background-page .card-subtitle {
+  font-size: 1.0em;
+  position: absolute;
+  top: 52%;
+  width: 100%;
+  color: #fff;
+}
