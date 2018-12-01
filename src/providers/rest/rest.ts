@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CardDisplayPage } from '../../card-display/card-display';
+import { CardDisplayPage } from '../../pages/card-display/card-display';			//Possibly Dangerous	Brona (circular dependancy)
 
 /*
   Generated class for the RestProvider provider.
@@ -20,6 +20,7 @@ export class RestProvider {
   }
 
   getDataFromAPIViaPromise() {
+		//this.http.get(this.OUR_REST_API_URL).toPromise();			// This could be shorter code for below... possibly needs catch wherever it is called. Brona
   	return new Promise(resolve => {
   		//let url = "https://api.edamam.com/search?q=";
   		this.http.get(this.OUR_REST_API_URL).subscribe(data => {resolve(data);

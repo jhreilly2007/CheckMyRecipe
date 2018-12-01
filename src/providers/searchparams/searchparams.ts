@@ -1,8 +1,8 @@
 
 import { Injectable } from '@angular/core';
-import { AllergiesPage } from '../../allergies/allergies';
-import { CardDisplayPage } from '../../card-display/card-display';
-import { HomePage } from '../../home/home';
+import { AllergiesPage } from '../../pages/allergies/allergies';            //Possibly not needed (Dangerous to have them) Brona
+import { CardDisplayPage } from '../../pages/card-display/card-display';    // ^ also needed to add '/pages' to all of inports as without it the app broke.
+import { HomePage } from '../../pages/home/home';                           // ^
 /*
   Generated class for the SearchparamsProvider provider.
 
@@ -11,7 +11,7 @@ import { HomePage } from '../../home/home';
 */
 @Injectable()
 export class SearchparamsProvider {
-
+  searchInput:string = "";                //added a field to hold the input for the search page (seperated by commas) Brona
 	//checklist options for allergies.html
 	optionsAllergies: any[] = new Array();
 	optionsDietary: any[] = new Array();

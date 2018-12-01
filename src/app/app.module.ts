@@ -14,13 +14,14 @@ import { RecipeInfoPage } from '../pages/recipe-info/recipe-info';
 import { AboutPage } from '../pages/about/about';
 import { RestProvider } from '../providers/rest/rest';
 import { SearchparamsProvider } from '../providers/searchparams/searchparams';
+import { SearchPage } from '../pages/search/search';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage, AllergiesPage,
     CardDisplayPage, FaqPage, RecipeInfoPage,
-    AboutPage
+    AboutPage, SearchPage
   ],
   imports: [
     BrowserModule, HttpClientModule,
@@ -31,7 +32,7 @@ import { SearchparamsProvider } from '../providers/searchparams/searchparams';
     MyApp,
     HomePage, AllergiesPage,
     CardDisplayPage, FaqPage, RecipeInfoPage,
-    AboutPage
+    AboutPage, SearchPage
   ],
   providers: [
     StatusBar,
