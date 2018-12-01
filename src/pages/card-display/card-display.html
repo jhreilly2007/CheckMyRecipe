@@ -9,18 +9,7 @@ s<ion-header>
 
 <ion-content padding>
 
-	<ion-item>
-		<button ion-button round outline color="danger" (click) = "goToHome()">Go To Home</button>
-	</ion-item>
-
-	<ion-item>
-		<button ion-button round outline color="danger" (click) = "goToAllergies()">Go To Allergies</button>
-	</ion-item>
-
-	<ion-item>
-		<button ion-button round outline color="danger" (click) = "goToRecipeInfo()">Go To Recipe Info</button>
-	</ion-item>
-	
+	<!-- Display JSON data from API on cards -->
 		<ion-card *ngFor="let result of recipeList" (click)="displayJSONdata(result)">
 			<img src={{result.icon}}>
 			<ion-card-content>

@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CardDisplayPage } from '../../pages/card-display/card-display';			//Possibly Dangerous	Brona (circular dependancy)
 
 /*
   Generated class for the RestProvider provider.

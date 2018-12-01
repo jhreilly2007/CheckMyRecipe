@@ -1,8 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { AllergiesPage } from '../../pages/allergies/allergies';            //Possibly not needed (Dangerous to have them) Brona
-import { CardDisplayPage } from '../../pages/card-display/card-display';    // ^ also needed to add '/pages' to all of inports as without it the app broke.
-import { HomePage } from '../../pages/home/home';                           // ^
+                          // ^
 /*
   Generated class for the SearchparamsProvider provider.
 

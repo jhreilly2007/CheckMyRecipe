@@ -24,15 +24,14 @@ export class CardDisplayPage {
   recipeData: any;
   recipeList = new Array();
 
- // searches: string = "cauliflower,cheese";
-  //ingredientList = new Array();
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public restProvider: RestProvider, public theSearch: SearchparamsProvider) {
     this.getDataObjectsFromPromise();
   }
 
  
-
+/* Store JSON objects returned from API in recipeData. Store the info we need in recipeList for ease of use
+  across app. */
   getDataObjectsFromPromise(){
     this.restProvider.getDataFromAPIViaPromise().then(
       data => {console.log("Trying to access results from the Promise return");
@@ -44,13 +43,17 @@ export class CardDisplayPage {
         "url": this.recipeData.hits[i].recipe.url,
         "icon": this.recipeData.hits[i].recipe.image,
         "source": this.recipeData.hits[i].recipe.source,
-        "ingredients": this.recipeData.hits[i].recipe.ingredientLines
+        "ingredients": this.recipeData.hits[i].recipe.ingredientLines,
+        "nutrients": this.recipeData.hits[i].recipe.totalNutrients
       };
      // console.log(this.url);
     };
     });
   }
 
+
+    /* Clicking on a card displays that particular object on recipe-info display and passed the object
+    via navparam */
    displayJSONdata(clickedObject: any): void {
     this.selectedObject = clickedObject
     console.log("Assigned the JSON object in the Click Event from card-display.html");
@@ -61,31 +64,9 @@ export class CardDisplayPage {
     );
   }
 
-  /*getRecipeFromData(){
-    for(var i = 0; i < this.recipeData.hits.length; i++){
-      this.recipeList[i] = {
-        "name": recipeData.hits[i].recipe.label,
-        "url": recipeData.hits[i].recipe.url,
-        "icon": recipeData[i].recipe.image
-      };
-    };
-    //insert nested for loop to get ingredients list
-  }*/
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad CardDisplayPage');
   }
-  public goToHome()
-{
-	this.navCtrl.push(HomePage);
-}
-public goToAllergies()
-{
-	this.navCtrl.push(AllergiesPage);
-}
-public goToRecipeInfo()
-{
-	this.navCtrl.push(RecipeInfoPage);
-}
+
 
 }
