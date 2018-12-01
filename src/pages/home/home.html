@@ -7,22 +7,26 @@
 </ion-header>
 
 <ion-content padding>
-	
-	<ion-item>
-		<button ion-button round outline color="danger" (click) = "goToAllergies()">Go To Allergies</button>
-	</ion-item>
-			
-	<ion-item>
-		<button ion-button round outline color="danger" (click) = "goToCardDisplay()">Go To Card Display</button>
-	</ion-item>
-			
-	<ion-item>
-		<button ion-button round outline color="danger" (click) = "goToRecipeInfo()">Go To Recipe Info</button>
-	</ion-item>
-      
   <ion-item>
-		<button ion-button round outline color="danger" (click) = "goToSearch()">Go To Search Page</button>
-	</ion-item>
+    <ion-input #term type="text" placeholder="please enter a meal"></ion-input>
+    <!--when button is clicked search method called with value of input box-->
+  </ion-item>
+
+  <ion-item>
+    <button ion-button round color="light" (click)="search(term.value)">Search</button>
+  </ion-item>
+
+  <ion-item>
+    <button ion-button round outline color="danger" (click)="goToAllergies()">Go To Allergies</button>
+  </ion-item>
+
+  <ion-item>
+    <button ion-button round outline color="danger" (click)="goToCardDisplay()">Go To Card Display</button>
+  </ion-item>
+
+  <ion-item>
+    <button ion-button round outline color="danger" (click)="goToRecipeInfo()">Go To Recipe Info</button>
+  </ion-item>
 
   The world is your oyster.
   <p>
