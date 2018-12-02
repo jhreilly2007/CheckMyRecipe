@@ -39,4 +39,7 @@ public goToAllergies()
 {
 	this.navCtrl.push(AllergiesPage);
 }
+public navigateBack(){ // changed navigation to return to previous page rather than adding a new navigation
+  this.navCtrl.pop();
+}
 }

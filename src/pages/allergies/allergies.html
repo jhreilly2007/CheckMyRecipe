@@ -28,10 +28,11 @@ go straight to your search results!  </p>
       <div class="tab-content">
 
 		<ion-list inset>
-		  <ion-item [ngClass]="{allergyChosen: theSearch.isAllergySelectedByUser(tOption)}" *ngFor="let tOption of theSearch.getOptionsAllergies(); let i = index">
-		    <ion-label><b>{{tOption.allergiesName}}</b>
+			<!-- used list of strings instead of object for allergy list -->
+		  <ion-item [ngClass]="{allergyChosen: theSearch.isAllergySelectedByUser(allergy)}" *ngFor="let allergy of theSearch.getOptionsAllergies()">
+		    <ion-label><b>{{allergy}}</b>
 		    </ion-label>
-		    <ion-checkbox [checked] = "theSearch.isAllergySelectedByUser(tOption)" (ionChange)="theSearch.addAllergy(tOption)"></ion-checkbox>
+		    <ion-checkbox [checked] = "theSearch.isAllergySelectedByUser(allergy)" (ionChange)="theSearch.addAllergy(allergy)"></ion-checkbox>
 		  </ion-item>
 		</ion-list>   	
 		
@@ -45,10 +46,11 @@ go straight to your search results!  </p>
       <div class="tab-content">
 
       		<ion-list inset>
-		  <ion-item [ngClass]="{dietaryChosen: theSearch.isDietarySelectedByUser(tOption)}" *ngFor="let tOption of theSearch.getOptionsDietary(); let i = index">
-		    <ion-label><b>{{tOption.dietaryName}}</b>
+			<!-- used list of strings instead of object for diet list -->
+		  <ion-item [ngClass]="{dietaryChosen: theSearch.isDietarySelectedByUser(diet)}" *ngFor="let diet of theSearch.getOptionsDietary()">
+		    <ion-label><b>{{diet}}</b>
 		    </ion-label>
-		    <ion-checkbox [checked] = "theSearch.isDietarySelectedByUser(tOption)" (ionChange)="theSearch.addDietary(tOption)"></ion-checkbox>
+		    <ion-checkbox [checked] = "theSearch.isDietarySelectedByUser(diet)" (ionChange)="theSearch.addDietary(diet)"></ion-checkbox>
 		  </ion-item>
 		</ion-list>   	
 		

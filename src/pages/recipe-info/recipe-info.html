@@ -3,7 +3,7 @@
 <ion-card>
 <ion-card-content>
 
-  <img src="assets/imgs/noodles.png" style="float:left;width:325px;height:325px;"/>
+  <img src="{{passedObject.icon}}" style="float:left;width:325px;height:325px;"/>
    
    
        <ion-card-title>
@@ -54,7 +54,8 @@
   </ion-fab>
 
       <ion-fab bottom left>
-    <button ion-fab mini color="danger"(click) = "goToCardDisplay()" ><ion-icon name="backspace"></ion-icon></button>
+        <!-- updated navigations -->
+    <button ion-fab mini color="danger"(click) = "navigateBack()" ><ion-icon name="backspace"></ion-icon></button>
      </ion-fab>
 
         <ion-fab top right>
@@ -62,7 +63,8 @@
        <ion-fab-list side="left">
       <button ion-fab><ion-icon name="exit"></ion-icon></button>
       <button ion-fab><ion-icon name="help"></ion-icon></button>
-       <button ion-fab (click) = "goToCardDisplay()"><ion-icon name="backspace"></ion-icon></button>
+        <!-- updated navigations -->
+       <button ion-fab (click) = "navigateBack()"><ion-icon name="backspace"></ion-icon></button>
        <button ion-fab (click) = "goToHome()"><ion-icon name="home"></ion-icon></button>
     </ion-fab-list>
       </ion-fab>
