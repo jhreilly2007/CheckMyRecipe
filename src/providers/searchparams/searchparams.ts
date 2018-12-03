@@ -21,28 +21,30 @@ export class SearchparamsProvider {
   searchHealthString: string = "";
 
   constructor() {
-    this.optionsAllergies = [
-      "celery-free",
-      "crustacean-free",
-      "dairy-free",
-      "egg-free",
-      "fish-free",
-      "gluten-free",
-      "lupine-free",
-      "mustard-free",
+    this.optionsAllergies = [   // disabled blocked search terms - Karen
+      //"celery-free",
+      //"crustacean-free",
+      //"dairy-free",
+      //"egg-free",
+      //"fish-free",
+      //"gluten-free",
+      //"lupine-free",
+      //"mustard-free",
       "peanut-free",
-      "sesame-free",
-      "shellfish-free",
-      "soy-free",
+      //"sesame-free",
+      //"shellfish-free",
+      //"soy-free",
       "tree-nut-free",
-      "wheat-free"
+      //"wheat-free"
     ];
     this.optionsDietary = [
-      "kosher",
-      "paleo",
-      "pescatarian",
+      //"kosher",
+      //"paleo",
+      //"pescatarian",
       "vegan",
-      "vegetarian"
+      "vegetarian",
+      "sugar-conscious",
+      "alcohol-free"
     ];
   }
   /* get methods for the options for the interface */
