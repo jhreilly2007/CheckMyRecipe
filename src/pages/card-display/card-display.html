@@ -16,7 +16,16 @@ s<ion-header>
 				<ion-card-title>
 					{{result.name}}
 				</ion-card-title>
+				<ion-row>
+				<ion-col text-left>				
 				<p>{{result.source}}</p>
+			</ion-col>
+			<ion-col text-right>
+				<!-- display calories rounded down -->
+				<p>{{result.nutrients.ENERC_KCAL.quantity|number:'1.0-0'}} calories</p>		
+			</ion-col>
+		</ion-row>
+			
 		</ion-card-content>
 	</ion-card>
 </ion-content>
