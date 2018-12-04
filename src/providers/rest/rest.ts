@@ -11,7 +11,7 @@ import { Injectable } from "@angular/core";
 export class RestProvider {
   /* Base Url */
   OUR_REST_API_URL =
-    "https://api.edamam.com/search?app_id=094290e0&app_key=f6754f4874d157c5d9c45368bae02f6f";
+    "https://api.edamam.com/search?app_id=586b6a86&app_key=7ee60a3315e2c4fef3742021fabba111";
 
   constructor(public http: HttpClient) {}
 

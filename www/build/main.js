@@ -86,7 +86,7 @@ var RestProvider = /** @class */ (function () {
     function RestProvider(http) {
         this.http = http;
         /* Base Url */
-        this.OUR_REST_API_URL = "https://api.edamam.com/search?app_id=094290e0&app_key=f6754f4874d157c5d9c45368bae02f6f";
+        this.OUR_REST_API_URL = "https://api.edamam.com/search?app_id=586b6a86&app_key=7ee60a3315e2c4fef3742021fabba111";
     }
     /**
      * Creates an observable that returns the search of the edamam api
@@ -102,9 +102,10 @@ var RestProvider = /** @class */ (function () {
     };
     RestProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
     ], RestProvider);
     return RestProvider;
+    var _a;
 }());
 
 //# sourceMappingURL=rest.js.map
