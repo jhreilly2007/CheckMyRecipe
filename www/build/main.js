@@ -30,15 +30,15 @@ var map = {
 		3
 	],
 	"../pages/card-display/card-display.module": [
-		407,
+		405,
 		2
 	],
 	"../pages/faq/faq.module": [
-		405,
+		406,
 		1
 	],
 	"../pages/recipe-info/recipe-info.module": [
-		406,
+		407,
 		0
 	]
 };
@@ -102,10 +102,9 @@ var RestProvider = /** @class */ (function () {
     };
     RestProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
     ], RestProvider);
     return RestProvider;
-    var _a;
 }());
 
 //# sourceMappingURL=rest.js.map
@@ -274,9 +273,9 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/allergies/allergies.module#AllergiesPageModule', name: 'AllergiesPage', segment: 'allergies', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/card-display/card-display.module#CardDisplayPageModule', name: 'CardDisplayPage', segment: 'card-display', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/faq/faq.module#FaqPageModule', name: 'FaqPage', segment: 'faq', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/recipe-info/recipe-info.module#RecipeInfoPageModule', name: 'RecipeInfoPage', segment: 'recipe-info', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/card-display/card-display.module#CardDisplayPageModule', name: 'CardDisplayPage', segment: 'card-display', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/recipe-info/recipe-info.module#RecipeInfoPageModule', name: 'RecipeInfoPage', segment: 'recipe-info', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
@@ -507,7 +506,7 @@ var RecipeInfoPage = /** @class */ (function () {
     };
     RecipeInfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-recipe-info',template:/*ion-inline-start:"C:\Users\Karen\Documents\HDip\CS385\CheckMyRecipe\src\pages\recipe-info\recipe-info.html"*/'<ion-header>\n\n\n\n<ion-card>\n\n<ion-card-content>\n\n\n\n  <img src="{{passedObject.icon}}" style="float:left;width:325px;height:325px;"/>\n\n   \n\n   \n\n       <ion-card-title>\n\n\n\n     <h1>{{passedObject.name}}</h1>\n\n      </ion-card-title>\n\n\n\n    <p>\n\n      Cook our healthy, vegan stir-fry to pack in four of your 5-a-day. The hoisin sauce is \n\n      made with Chinese five spice and apple cider vinegar to boost the flavour\n\n    </p>\n\n    \n\n    <div>\n\n   \n\n\n\n    <b>INGREDIENTS</b>\n\n  \n\n\n\n    </div>\n\n\n\n \n\n    <ion-row >\n\n    <ion-col full col-12>Nutritional Info </ion-col>\n\n   <ion-chip>\n\n  <ion-label padding-horizontal>Kcal</ion-label>\n\n  <ion-label padding-horizontal>fat</ion-label>\n\n  <ion-label padding-horizontal>saturates</ion-label>\n\n  <ion-label padding-horizontal>carbs</ion-label>\n\n  <ion-label padding-horizontal>sugars</ion-label>\n\n  <ion-label padding-horizontal>fibre</ion-label>\n\n  <ion-label padding-horizontal>protein</ion-label>\n\n  <ion-label padding-horizontal>salt</ion-label>\n\n		</ion-chip>\n\n	 </ion-row>\n\n\n\n  \n\n\n\n\n\n\n\n     <ion-fab right bottom>\n\n    <button ion-fab mini color="danger"><ion-icon name="share"></ion-icon></button>\n\n    <ion-fab-list side="left">\n\n      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>\n\n    </ion-fab-list>\n\n  </ion-fab>\n\n\n\n      <ion-fab bottom left>\n\n        <!-- updated navigations -->\n\n    <button ion-fab mini color="danger"(click) = "navigateBack()" ><ion-icon name="backspace"></ion-icon></button>\n\n     </ion-fab>\n\n\n\n        <ion-fab top right>\n\n    <button ion-fab mini><ion-icon name="menu"></ion-icon></button>\n\n       <ion-fab-list side="left">\n\n      <button ion-fab><ion-icon name="exit"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="help"></ion-icon></button>\n\n        <!-- updated navigations -->\n\n       <button ion-fab (click) = "navigateBack()"><ion-icon name="backspace"></ion-icon></button>\n\n       <button ion-fab (click) = "goToHome()"><ion-icon name="home"></ion-icon></button>\n\n    </ion-fab-list>\n\n      </ion-fab>\n\n\n\n   </ion-card-content>\n\n</ion-card>\n\n\n\n</ion-header>\n\n\n\n\n\n\n\n<!-- (commented out this code) \n\n<ion-content padding>\n\n\n\n	<ion-item>\n\n		<button ion-button round outline color="danger" (click) = "goToHome()">Go To Home</button>\n\n	</ion-item>\n\n\n\n	<ion-item>\n\n		<button ion-button round outline color="danger" (click) = "goToCardDisplay()">Go To Card Display</button>\n\n	</ion-item>\n\n\n\n	<ion-item>\n\n		<button ion-button round outline color="danger" (click) = "goToAllergies()">Go To Allergies</button>\n\n	</ion-item>\n\n\n\n</ion-content>\n\n-->\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n	 \n\n\n\n\n\n'/*ion-inline-end:"C:\Users\Karen\Documents\HDip\CS385\CheckMyRecipe\src\pages\recipe-info\recipe-info.html"*/,
+            selector: 'page-recipe-info',template:/*ion-inline-start:"C:\Users\Karen\Documents\HDip\CS385\CheckMyRecipe\src\pages\recipe-info\recipe-info.html"*/'<ion-header>\n\n  <ion-navbar color="t_white">\n\n\n\n    <ion-title>{{passedObject.name}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-12 col-md-6>\n\n\n\n        <img src="{{passedObject.icon}}" style="float:left;width:100%;height:400px;"/>\n\n\n\n      </ion-col>\n\n\n\n\n\n      <ion-col col-12 col-md-6>\n\n                 \n\n        <h1>{{passedObject.name}}</h1>\n\n           \n\n              \n\n              <h2> Ingredients: </h2>\n\n\n\n              <p>{{passedObject.ingredients}}</p>\n\n\n\n              <div>\n\n\n\n              <p class ="p1"> Check out this delicious recipe: </p>\n\n\n\n              <p class ="p2"> {{passedObject.url}} </p>\n\n\n\n            </div>\n\n      \n\n            </ion-col>\n\n  </ion-row>\n\n\n\n\n\n    <ion-row>\n\n      <ion-col col-12-col-md-2>\n\n        \n\n        <div class = "line">\n\n          <p class = "word"> Kcal </p>\n\n        </div>\n\n        <p class = "info">2000</p>\n\n\n\n      </ion-col>\n\n\n\n      <ion-col col-12-col-md-2>\n\n        <div class = "line">\n\n          <p class = "word"> Sugar </p>\n\n        </div>\n\n        <p class = "info"> 23g </p>\n\n      </ion-col>\n\n\n\n      \n\n      <ion-col col-12 col-md-2>\n\n         <div class = "line">\n\n          <p class = "word"> FAT </p>\n\n        </div>\n\n        <p class = "info"> 50g </p>\n\n      </ion-col>\n\n\n\n\n\n      <ion-col col-12 col-md-2>\n\n          <div class = "line">\n\n           <p class = "word"> Carbs </p>\n\n        </div>\n\n        <p class = "info"> 100g </p>\n\n      </ion-col>\n\n\n\n\n\n      <ion-col col-12 col-md-2>\n\n           <div class = "line">\n\n           <p class = "word"> Protein </p>\n\n        </div>\n\n        <p class = "info"> 75g </p>\n\n      </ion-col>\n\n\n\n\n\n      <ion-col col-12 col-md-2>\n\n            <div class = "line">\n\n            <p class = "word"> Salt </p>\n\n        </div>\n\n        <p class = "info"> 20g </p>\n\n      </ion-col>\n\n \n\n    </ion-row>\n\n      \n\n     <!--<div class = "clearfix">-->\n\n\n\n\n\n\n\n     <ion-fab right bottom>\n\n    <button ion-fab mini color="danger"><ion-icon name="share"></ion-icon></button>\n\n    <ion-fab-list side="left">\n\n      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>\n\n    </ion-fab-list>\n\n  </ion-fab>\n\n\n\n      <ion-fab bottom left>\n\n        <!-- updated navigations -->\n\n    <button ion-fab mini color="danger"(click) = "navigateBack()" ><ion-icon name="backspace"></ion-icon></button>\n\n     </ion-fab>\n\n\n\n        <ion-fab top right>\n\n    <button ion-fab mini><ion-icon name="menu"></ion-icon></button>\n\n       <ion-fab-list side="left">\n\n      <button ion-fab><ion-icon name="exit"></ion-icon></button>\n\n      <button ion-fab><ion-icon name="help"></ion-icon></button>\n\n        <!-- updated navigations -->\n\n       <button ion-fab (click) = "navigateBack()"><ion-icon name="backspace"></ion-icon></button>\n\n       <button ion-fab (click) = "goToHome()"><ion-icon name="home"></ion-icon></button>\n\n    </ion-fab-list>\n\n      </ion-fab>\n\n\n\n  </ion-grid>\n\n</ion-content>\n\n\n\n\n\n<!-- (commented out this code) \n\n<ion-content padding>\n\n\n\n	<ion-item>\n\n		<button ion-button round outline color="danger" (click) = "goToHome()">Go To Home</button>\n\n	</ion-item>\n\n\n\n	<ion-item>\n\n		<button ion-button round outline color="danger" (click) = "goToCardDisplay()">Go To Card Display</button>\n\n	</ion-item>\n\n\n\n	<ion-item>\n\n		<button ion-button round outline color="danger" (click) = "goToAllergies()">Go To Allergies</button>\n\n	</ion-item>\n\n\n\n</ion-content>\n\n-->\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n	 \n\n\n\n\n\n'/*ion-inline-end:"C:\Users\Karen\Documents\HDip\CS385\CheckMyRecipe\src\pages\recipe-info\recipe-info.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], RecipeInfoPage);

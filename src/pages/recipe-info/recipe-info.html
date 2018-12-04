@@ -1,45 +1,94 @@
 <ion-header>
+  <ion-navbar color="t_white">
 
-<ion-card>
-<ion-card-content>
+    <ion-title>{{passedObject.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
 
-  <img src="{{passedObject.icon}}" style="float:left;width:325px;height:325px;"/>
-   
-   
-       <ion-card-title>
+<ion-content>
 
-     <h1>{{passedObject.name}}</h1>
-      </ion-card-title>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-6>
 
-    <p>
-      Cook our healthy, vegan stir-fry to pack in four of your 5-a-day. The hoisin sauce is 
-      made with Chinese five spice and apple cider vinegar to boost the flavour
-    </p>
-    
-    <div>
-   
+        <img src="{{passedObject.icon}}" style="float:left;width:100%;height:400px;"/>
 
-    <b>INGREDIENTS</b>
-  
+      </ion-col>
 
-    </div>
 
+      <ion-col col-12 col-md-6>
+                 
+        <h1>{{passedObject.name}}</h1>
+           
+              
+              <h2> Ingredients: </h2>
+
+              <p>{{passedObject.ingredients}}</p>
+
+              <div>
+
+              <p class ="p1"> Check out this delicious recipe: </p>
+
+              <p class ="p2"> {{passedObject.url}} </p>
+
+            </div>
+      
+            </ion-col>
+  </ion-row>
+
+
+    <ion-row>
+      <ion-col col-12-col-md-2>
+        
+        <div class = "line">
+          <p class = "word"> Kcal </p>
+        </div>
+        <p class = "info">2000</p>
+
+      </ion-col>
+
+      <ion-col col-12-col-md-2>
+        <div class = "line">
+          <p class = "word"> Sugar </p>
+        </div>
+        <p class = "info"> 23g </p>
+      </ion-col>
+
+      
+      <ion-col col-12 col-md-2>
+         <div class = "line">
+          <p class = "word"> FAT </p>
+        </div>
+        <p class = "info"> 50g </p>
+      </ion-col>
+
+
+      <ion-col col-12 col-md-2>
+          <div class = "line">
+           <p class = "word"> Carbs </p>
+        </div>
+        <p class = "info"> 100g </p>
+      </ion-col>
+
+
+      <ion-col col-12 col-md-2>
+           <div class = "line">
+           <p class = "word"> Protein </p>
+        </div>
+        <p class = "info"> 75g </p>
+      </ion-col>
+
+
+      <ion-col col-12 col-md-2>
+            <div class = "line">
+            <p class = "word"> Salt </p>
+        </div>
+        <p class = "info"> 20g </p>
+      </ion-col>
  
-    <ion-row >
-    <ion-col full col-12>Nutritional Info </ion-col>
-   <ion-chip>
-  <ion-label padding-horizontal>Kcal</ion-label>
-  <ion-label padding-horizontal>fat</ion-label>
-  <ion-label padding-horizontal>saturates</ion-label>
-  <ion-label padding-horizontal>carbs</ion-label>
-  <ion-label padding-horizontal>sugars</ion-label>
-  <ion-label padding-horizontal>fibre</ion-label>
-  <ion-label padding-horizontal>protein</ion-label>
-  <ion-label padding-horizontal>salt</ion-label>
-		</ion-chip>
-	 </ion-row>
-
-  
+    </ion-row>
+      
+     <!--<div class = "clearfix">-->
 
 
 
@@ -69,11 +118,8 @@
     </ion-fab-list>
       </ion-fab>
 
-   </ion-card-content>
-</ion-card>
-
-</ion-header>
-
+  </ion-grid>
+</ion-content>
 
 
 <!-- (commented out this code) 
