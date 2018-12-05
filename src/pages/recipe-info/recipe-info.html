@@ -24,14 +24,23 @@
            <h2> Ingredients: </h2>
            <ion-row *ngFor="let ingredient of passedObject.ingredients">{{ingredient}}</ion-row>
               
-              
+             
 
-              <ion-item>
+              <a button href="{{passedObject.url}}" clear>
+                <button ion-button full color="primary">Check My Recipe</button></a>
+               
+
+
+
+              <!--<ion-item>
               <button ion-button full (click)="openUrl()">Check My Recipe</button>
               </ion-item>
 
+              <!--<h1>{{passedObject.url}}</h1>-->
                   
             </ion-col>
+
+            
   </ion-row>
 
 
