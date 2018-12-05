@@ -19,15 +19,14 @@
       <ion-col col-12 col-md-6>
                  
         <h1>{{passedObject.name}}</h1>
-           
+           <h2> Ingredients: </h2>
+           <ion-row *ngFor="let ingredient of passedObject.ingredients">{{ingredient}}</ion-row>
               
-              <h2> Ingredients: </h2>
-
-              <p>{{passedObject.ingredients}}</p>
+              
 
               <div>
 
-              <p class ="p1"> Check out this delicious recipe: </p>
+              <p class ="p1" click="goToURL()"> Check out this delicious recipe: </p>
 
               <p class ="p2"> {{passedObject.url}} </p>
 
@@ -43,7 +42,7 @@
         <div class = "line">
           <p class = "word"> Kcal </p>
         </div>
-        <p class = "info">2000</p>
+        <p class = "info">{{passedObject.nutrients.ENERC_KCAL.quantity|number:'1.0-0'}}</p>
 
       </ion-col>
 

@@ -6,7 +6,7 @@ import {
   LoadingController,
   Loading
 } from "ionic-angular";
-// import { HomePage } from "../home/home";
+import { HomePage } from "../home/home";
 // import { AllergiesPage } from "../allergies/allergies";
 import { RecipeInfoPage } from "../recipe-info/recipe-info";
 import { RestProvider } from "../../providers/rest/rest";
@@ -94,4 +94,10 @@ export class CardDisplayPage {
   ngOnDestroy() {
     this.subscription.unsubscribe(); // cancel the request to clean up
   }
+
+    public goToHome()
+  {
+    this.navCtrl.push(HomePage);
+  }
+
 }

@@ -31,7 +31,7 @@ export class RestProvider {
   }
 }
 /**
- * Types from Edamam api
+ * Types from Edamam api - shape of the JSON response
  */
 export interface Params {
   sane: any[];

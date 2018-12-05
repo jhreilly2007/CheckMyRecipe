@@ -1,7 +1,7 @@
 s<ion-header>
 
   <ion-navbar>
-    <ion-title>Your Recipes</ion-title>
+    <ion-title>Search Results</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -28,4 +28,10 @@ s<ion-header>
 			
 		</ion-card-content>
 	</ion-card>
+
+
+<!-- if no results are returned from the search - display message to user -->
+<ion-card ng-if="recipeList.length<=0" text-center (click)="goToHome()">
+			<div><h1>Your search didn't return any results.</h1><h2> Click here to start over. Be careful with spelling!</h2></div>
+</ion-card>
 </ion-content>

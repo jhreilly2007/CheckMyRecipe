@@ -42,4 +42,8 @@ public goToAllergies()
 public navigateBack(){ // changed navigation to return to previous page rather than adding a new navigation
   this.navCtrl.pop();
 }
+/*public goToURL(){
+   // need something here to navigate outside of app (follow eternal url)
+}*/
 }
+
