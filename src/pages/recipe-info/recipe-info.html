@@ -2,6 +2,8 @@
   <ion-navbar color="t_white">
 
     <ion-title>{{passedObject.name}}</ion-title>
+
+
   </ion-navbar>
 </ion-header>
 
@@ -11,7 +13,7 @@
     <ion-row>
       <ion-col col-12 col-md-6>
 
-        <img src="{{passedObject.icon}}" style="float:left;width:100%;height:400px;"/>
+        <img src="{{passedObject.icon}}" style="float:left;width:100%;height:325px;"/>
 
       </ion-col>
 
@@ -24,14 +26,11 @@
               
               
 
-              <div>
+              <ion-item>
+              <button ion-button full (click)="openUrl()">Check My Recipe</button>
+              </ion-item>
 
-              <p class ="p1" click="goToURL()"> Check out this delicious recipe: </p>
-
-              <p class ="p2"> {{passedObject.url}} </p>
-
-            </div>
-      
+                  
             </ion-col>
   </ion-row>
 
@@ -40,41 +39,41 @@
       <ion-col col-12-col-md-2>
         
         <div class = "line">
-          <p class = "word"> Kcal </p>
+          <p class = "word"> {{passedObject.nutrients.ENERC_KCAL.label|titlecase}}  </p>
         </div>
-        <p class = "info">{{passedObject.nutrients.ENERC_KCAL.quantity|number:'1.0-0'}}</p>
+        <p class = "info">{{passedObject.nutrients.ENERC_KCAL.quantity|number:'1.0-0'}}{{passedObject.nutrients.ENERC_KCAL.unit}}</p>
 
       </ion-col>
 
       <ion-col col-12-col-md-2>
         <div class = "line">
-          <p class = "word"> Sugar </p>
+          <p class = "word"> {{passedObject.nutrients.SUGAR.label|titlecase}} </p>
         </div>
-        <p class = "info"> 23g </p>
+        <p class = "info"> {{passedObject.nutrients.SUGAR.quantity|number:'1.0-0'}}{{passedObject.nutrients.SUGAR.unit}}</p>
       </ion-col>
 
       
       <ion-col col-12 col-md-2>
          <div class = "line">
-          <p class = "word"> FAT </p>
+          <p class = "word"> {{passedObject.nutrients.FAT.label|titlecase}} </p>
         </div>
-        <p class = "info"> 50g </p>
+        <p class = "info"> {{passedObject.nutrients.FAT.quantity|number:'1.0-0'}}{{passedObject.nutrients.FAT.unit}}</p>
       </ion-col>
 
 
       <ion-col col-12 col-md-2>
           <div class = "line">
-           <p class = "word"> Carbs </p>
+           <p class = "word"> {{passedObject.nutrients.CHOCDF.label|titlecase}} </p>
         </div>
-        <p class = "info"> 100g </p>
+        <p class = "info"> {{passedObject.nutrients.CHOCDF.quantity|number:'1.0-0'}}{{passedObject.nutrients.CHOCDF.unit}} </p>
       </ion-col>
 
 
       <ion-col col-12 col-md-2>
            <div class = "line">
-           <p class = "word"> Protein </p>
+           <p class = "word"> {{passedObject.nutrients.PROCNT.label|titlecase}} </p>
         </div>
-        <p class = "info"> 75g </p>
+        <p class = "info"> {{passedObject.nutrients.PROCNT.quantity|number:'1.0-0'}}{{passedObject.nutrients.PROCNT.unit}} </p>
       </ion-col>
 
 
@@ -82,29 +81,13 @@
             <div class = "line">
             <p class = "word"> Salt </p>
         </div>
-        <p class = "info"> 20g </p>
+        <p class = "info"> {{passedObject.nutrients.NA.quantity|number:'1.0-0'}}{{passedObject.nutrients.NA.unit}} </p>
       </ion-col>
  
     </ion-row>
       
      <!--<div class = "clearfix">-->
 
-
-
-     <ion-fab right bottom>
-    <button ion-fab mini color="danger"><ion-icon name="share"></ion-icon></button>
-    <ion-fab-list side="left">
-      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
-      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
-      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
-      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
-    </ion-fab-list>
-  </ion-fab>
-
-      <ion-fab bottom left>
-        <!-- updated navigations -->
-    <button ion-fab mini color="danger"(click) = "navigateBack()" ><ion-icon name="backspace"></ion-icon></button>
-     </ion-fab>
 
         <ion-fab top right>
     <button ion-fab mini><ion-icon name="menu"></ion-icon></button>
@@ -119,35 +102,3 @@
 
   </ion-grid>
 </ion-content>
-
-
-<!-- (commented out this code) 
-<ion-content padding>
-
-	<ion-item>
-		<button ion-button round outline color="danger" (click) = "goToHome()">Go To Home</button>
-	</ion-item>
-
-	<ion-item>
-		<button ion-button round outline color="danger" (click) = "goToCardDisplay()">Go To Card Display</button>
-	</ion-item>
-
-	<ion-item>
-		<button ion-button round outline color="danger" (click) = "goToAllergies()">Go To Allergies</button>
-	</ion-item>
-
-</ion-content>
--->
-
-
-
-
-
-
-
-
-
-
-	 
-
-

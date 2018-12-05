@@ -25827,13 +25827,14 @@ p.oblique {
 
 h1 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 55px;
+  font-size: 30px;
   font-weight: 500;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 15px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 250;
 }
 
 .p1 {

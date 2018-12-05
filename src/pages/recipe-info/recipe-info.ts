@@ -4,6 +4,7 @@ import { HomePage } from '../home/home';
 import { AllergiesPage } from '../allergies/allergies';
 import { CardDisplayPage } from '../card-display/card-display';
 
+
 /**
  * Generated class for the RecipeInfoPage page.
  *
@@ -27,23 +28,29 @@ export class RecipeInfoPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecipeInfoPage');
   }
+
 public goToHome()
 {
-	this.navCtrl.push(HomePage);
+  this.navCtrl.push(HomePage);
 }
 public goToCardDisplay()
 {
-	this.navCtrl.push(CardDisplayPage);
+  this.navCtrl.push(CardDisplayPage);
 }
 public goToAllergies()
 {
-	this.navCtrl.push(AllergiesPage);
+  this.navCtrl.push(AllergiesPage);
 }
 public navigateBack(){ // changed navigation to return to previous page rather than adding a new navigation
   this.navCtrl.pop();
 }
 /*public goToURL(){
    // need something here to navigate outside of app (follow eternal url)
-}*/
+   }*/
+public openUrl(){ 
+  window.open('https://www.google.ie'); 
+}
+
+
 }
 
