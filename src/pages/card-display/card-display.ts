@@ -55,7 +55,7 @@ export class CardDisplayPage {
         this.theSearch.searchInput, this.theSearch.searchAllergies, this.theSearch.searchDietary
       ) 
       .pipe( //pipe() lets us combine multiple functions into a single function
-        // transform the data to the right shape 
+        // transform the data to the right shape and puts it into an array using the RXJS map and mergeMap functions
         mergeMap(x => x.hits),
         map(x => x.recipe),
         map(x => ({

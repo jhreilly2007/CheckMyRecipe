@@ -493,7 +493,7 @@ var CardDisplayPage = /** @class */ (function () {
         // request the api with the search terms as paramaters
         this.theSearch.searchInput, this.theSearch.searchAllergies, this.theSearch.searchDietary)
             .pipe(//pipe() lets us combine multiple functions into a single function
-        // transform the data to the right shape 
+        // transform the data to the right shape and puts it into an array using the RXJS map and mergeMap functions
         Object(__WEBPACK_IMPORTED_MODULE_6_rxjs_operators__["mergeMap"])(function (x) { return x.hits; }), Object(__WEBPACK_IMPORTED_MODULE_6_rxjs_operators__["map"])(function (x) { return x.recipe; }), Object(__WEBPACK_IMPORTED_MODULE_6_rxjs_operators__["map"])(function (x) { return ({
             name: x.label,
             url: x.url,
