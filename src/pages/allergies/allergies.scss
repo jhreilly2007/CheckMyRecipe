@@ -3,6 +3,7 @@ ion-header::after {
 		background-image: none !important;
 		border-bottom: #bbb solid 0.05rem;
 	}	
+
 	.tab-wrap {
 	  width: 100%;
 	  position: relative;
@@ -13,8 +14,9 @@ ion-header::after {
 
 	input[type="radio"][name="tabs"] {
 	  position: absolute;
-	  z-index: -1;	  
+	  z-index: -1; 
 	}
+
 	input[type="radio"][name="tabs"]:checked + .tab-label-content .tab-label {
 	  color: #FF2233;
 	  border-left: #ddd solid 1px;
@@ -52,8 +54,6 @@ ion-header::after {
 	  
 	}
 
-
-
 	.slide {
 	  background: #ff2233;
 	  width: 50%;
@@ -76,7 +76,8 @@ ion-header::after {
 	  display: none;
 	}
 
-	#seeRecipes {
-	  margin-bottom: 20%;
+	#button {
+		width: 50%;
+		margin: 0% auto 20% auto;
 	}
 }

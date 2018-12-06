@@ -25766,8 +25766,9 @@ page-allergies .tab-label-content .tab-content {
   display: none;
 }
 
-page-allergies #seeRecipes {
-  margin-bottom: 20%;
+page-allergies #button {
+  width: 50%;
+  margin: 0% auto 20% auto;
 }
 
 page-card-display .card-background-page ion-card {

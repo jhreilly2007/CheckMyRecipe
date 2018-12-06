@@ -30,16 +30,16 @@ var map = {
 		3
 	],
 	"../pages/card-display/card-display.module": [
-		405,
-		0
-	],
-	"../pages/faq/faq.module": [
-		406,
+		407,
 		2
 	],
-	"../pages/recipe-info/recipe-info.module": [
-		407,
+	"../pages/faq/faq.module": [
+		405,
 		1
+	],
+	"../pages/recipe-info/recipe-info.module": [
+		406,
+		0
 	]
 };
 function webpackAsyncContext(req) {
@@ -88,16 +88,14 @@ var RestProvider = /** @class */ (function () {
         /* Base Url */
         this.OUR_REST_API_URL = "https://api.edamam.com/search?app_id=586b6a86&app_key=7ee60a3315e2c4fef3742021fabba111";
     }
-    /**
-     * Creates an observable that returns the search of the edamam api
-     * @param searchTerm the term to search for
-     * @param allergy the list of allergies
-     * @param dietary the list of diet requirements
-     */
     RestProvider.prototype.getDataFromAPI = function (searchTerm, allergy, dietary) {
         if (allergy === void 0) { allergy = []; }
         if (dietary === void 0) { dietary = []; }
-        var health = allergy.concat(dietary).join("&health="); // health cannot be ',' seperated for the api
+        /* used array spread syntax (expands the array into it's elements) and join on &health= as per url
+         search params */
+        var health = allergy.concat(dietary).join("&health=");
+        /*get the JSON data with user selected search terms (ingredients are in searchTerm, allergies
+        and dietary choices in health) */
         return this.http.get("" + this.OUR_REST_API_URL + (searchTerm ? "&q=" + searchTerm : "") + (health ? "&health=" + health : ""));
     };
     RestProvider = __decorate([
@@ -273,9 +271,9 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/allergies/allergies.module#AllergiesPageModule', name: 'AllergiesPage', segment: 'allergies', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/card-display/card-display.module#CardDisplayPageModule', name: 'CardDisplayPage', segment: 'card-display', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/faq/faq.module#FaqPageModule', name: 'FaqPage', segment: 'faq', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/recipe-info/recipe-info.module#RecipeInfoPageModule', name: 'RecipeInfoPage', segment: 'recipe-info', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/recipe-info/recipe-info.module#RecipeInfoPageModule', name: 'RecipeInfoPage', segment: 'recipe-info', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/card-display/card-display.module#CardDisplayPageModule', name: 'CardDisplayPage', segment: 'card-display', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
@@ -384,11 +382,9 @@ var HomePage = /** @class */ (function () {
     HomePage.prototype.ionViewDidLoad = function () {
         console.log("ionViewDidLoad HomePage");
     };
-    /**
-     *
-     * @param term is taken from the search template and added to the search params provider.
-     * splits value of term, and then joins these with a comma.
-     * when search button is clicked navigation goes to allergies page
+    /* term is taken from the search template and added to the search params provider.
+      splits value of term, and then joins these with a comma.
+      when search button is clicked navigation goes to allergies page
      */
     HomePage.prototype.search = function (term) {
         if (!term) {
@@ -479,8 +475,8 @@ var CardDisplayPage = /** @class */ (function () {
             content: "Please wait..."
         });
     }
-    /* Clicking on a card displays that particular object on recipe-info display and passed the object
-    via navparam */
+    /* Clicking on a card displays that particular object on recipe-info display and passes the object
+    via navparam. The declared selectedObject points to the clickObject and that's what's passed */
     CardDisplayPage.prototype.displayJSONdata = function (clickedObject) {
         this.selectedObject = clickedObject;
         console.log("Assigned the JSON object in the Click Event from card-display.html");
@@ -488,16 +484,17 @@ var CardDisplayPage = /** @class */ (function () {
             ourParam: this.selectedObject
         });
     };
-    // used ng init rather than the constructor to start data request
+    /* used ngOnInit rather than the constructor to start data request. Best pratice to have logic
+     done in ngOnInit - also easier to test and debug (angular docs) */
     CardDisplayPage.prototype.ngOnInit = function () {
         var _this = this;
-        this.loading.present(); // added a spinner
-        this.subscription = this.restProvider // request can be cancelled if you store the subscription
+        this.loading.present(); // added a spinner - Brona
+        this.subscription = this.restProvider
             .getDataFromAPI(
-        // request the api with the search terms
+        // request the api with the search terms as paramaters
         this.theSearch.searchInput, this.theSearch.searchAllergies, this.theSearch.searchDietary)
-            .pipe(
-        // transform the data to the right shape
+            .pipe(//pipe() lets us combine multiple functions into a single function
+        // transform the data to the right shape and puts it into an array using the RXJS map and mergeMap functions
         Object(__WEBPACK_IMPORTED_MODULE_6_rxjs_operators__["mergeMap"])(function (x) { return x.hits; }), Object(__WEBPACK_IMPORTED_MODULE_6_rxjs_operators__["map"])(function (x) { return x.recipe; }), Object(__WEBPACK_IMPORTED_MODULE_6_rxjs_operators__["map"])(function (x) { return ({
             name: x.label,
             url: x.url,
@@ -509,14 +506,14 @@ var CardDisplayPage = /** @class */ (function () {
             .subscribe(function (data) { return (_this.recipeList = data); }, // set the data when it arrives
         function (// set the data when it arrives
             err) {
-            console.error("here", err); // sometimes the api gives an error, should handle this with a message to user maybe
+            console.error("here", err);
             _this.loading.dismiss();
             // this.navCtrl.pop();
         }, function () { return _this.loading.dismiss(); } // remove the spinner when request is complete
         );
     };
     CardDisplayPage.prototype.ngOnDestroy = function () {
-        this.subscription.unsubscribe(); // cancel the request to clean up
+        this.subscription.unsubscribe(); // cancel the request to clean up (have to manually unsubscribe now that we're not using promise)
     };
     CardDisplayPage.prototype.goToHome = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
@@ -525,11 +522,8 @@ var CardDisplayPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: "page-card-display",template:/*ion-inline-start:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\card-display\card-display.html"*/'s<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Search Results</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n	<!-- Display JSON data from API on cards -->\n\n		<ion-card *ngFor="let result of recipeList" (click)="displayJSONdata(result)">\n\n			<img src={{result.icon}}>\n\n			<ion-card-content>\n\n				<ion-card-title>\n\n					{{result.name}}\n\n				</ion-card-title>\n\n				<ion-row>\n\n				<ion-col text-left>				\n\n				<p>{{result.source}}</p>\n\n			</ion-col>\n\n			<ion-col text-right>\n\n				<!-- display calories rounded down -->\n\n				<p>{{result.nutrients.ENERC_KCAL.quantity|number:\'1.0-0\'}} calories</p>		\n\n			</ion-col>\n\n		</ion-row>\n\n			\n\n		</ion-card-content>\n\n	</ion-card>\n\n\n\n<!-- need to fix this - it\'s showing regardless of whether we have results or not -->\n\n<!-- if no results are returned from the search - display message to user -->\n\n<ion-card ng-if="recipeList.length<=0" text-center (click)="goToHome()">\n\n			<div><h1>Your search didn\'t return any results.</h1><h2> Click here to start over. Be careful with spelling!</h2></div>\n\n</ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\card-display\card-display.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__["a" /* RestProvider */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_searchparams_searchparams__["a" /* SearchparamsProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_searchparams_searchparams__["a" /* SearchparamsProvider */]])
     ], CardDisplayPage);
     return CardDisplayPage;
 }());
@@ -790,7 +784,7 @@ var AllergiesPage = /** @class */ (function () {
     };
     AllergiesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-allergies',template:/*ion-inline-start:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\allergies\allergies.html"*/'<ion-header>\n\n  <ion-navbar color="t_white">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>  \n\n    <ion-title> Pick your food restrictions </ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n\n\n\n\n<!-- <h1>Allergies selection</h1>\n\n<div text-justify>\n\n<p>Select one or more allergies - your search results will only contain recipes flagged as safe for\n\n	this allergy. Go to the next tab to select dietary requirements, or hit SEE RECIPES to \n\ngo straight to your search results!  </p>\n\n</div>	 -->\n\n\n\n\n\n<ion-content padding>\n\n<div class="tab-wrap">\n\n  \n\n    <input type="radio" name="tabs" id="tab1" checked>\n\n    <div class="tab-label-content" id="tab1-content">\n\n      <label class="tab-label" for="tab1"> Allergies </label>\n\n      <div class="tab-content">\n\n\n\n		<ion-list inset>\n\n			<!-- used list of strings instead of object for allergy list -->\n\n		  <ion-item [ngClass]="{allergyChosen: theSearch.isAllergySelectedByUser(allergy)}" *ngFor="let allergy of theSearch.getOptionsAllergies()">\n\n		    <ion-label><b>{{allergy}}</b>\n\n		    </ion-label>\n\n		    <ion-checkbox [checked] = "theSearch.isAllergySelectedByUser(allergy)" (ionChange)="theSearch.addAllergy(allergy)"></ion-checkbox>\n\n		  </ion-item>\n\n		</ion-list>   	\n\n		\n\n	  </div>\n\n    </div> \n\n\n\n\n\n	<input type="radio" name="tabs" id="tab2">\n\n    <div class="tab-label-content" id="tab2-content">\n\n      <label class="tab-label" for="tab2"> Dietary Requirements </label>\n\n      <div class="tab-content">\n\n\n\n      		<ion-list inset>\n\n			<!-- used list of strings instead of object for diet list -->\n\n		  <ion-item [ngClass]="{dietaryChosen: theSearch.isDietarySelectedByUser(diet)}" *ngFor="let diet of theSearch.getOptionsDietary()">\n\n		    <ion-label><b>{{diet}}</b>\n\n		    </ion-label>\n\n		    <ion-checkbox [checked] = "theSearch.isDietarySelectedByUser(diet)" (ionChange)="theSearch.addDietary(diet)"></ion-checkbox>\n\n		  </ion-item>\n\n		</ion-list>   	\n\n		\n\n	  </div>\n\n    </div>\n\n\n\n <div class="slide"></div>\n\n\n\n</div>\n\n\n\n</ion-content>\n\n\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n  	<ion-item>\n\n		<button ion-button round large color="danger" (click) = "goToCardDisplay()" id="seeRecipes">SEE RECIPES</button>\n\n	</ion-item>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n\n\n     \n\n     \n\n    \n\n      	'/*ion-inline-end:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\allergies\allergies.html"*/,
+            selector: 'page-allergies',template:/*ion-inline-start:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\allergies\allergies.html"*/'<ion-header>\n\n  <ion-navbar color="t_white">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>  \n\n    <ion-title> Pick your food restrictions </ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n\n\n\n\n<!-- <h1>Allergies selection</h1>\n\n<div text-justify>\n\n<p>Select one or more allergies - your search results will only contain recipes flagged as safe for\n\n	this allergy. Go to the next tab to select dietary requirements, or hit SEE RECIPES to \n\ngo straight to your search results!  </p>\n\n</div>	 -->\n\n\n\n\n\n<ion-content padding>\n\n<div class="tab-wrap">\n\n  \n\n    <input type="radio" name="tabs" id="tab1" checked>\n\n    <div class="tab-label-content" id="tab1-content">\n\n      <label class="tab-label" for="tab1"> Allergies </label>\n\n      <div class="tab-content">\n\n\n\n		<ion-list inset>\n\n			<!-- used list of strings instead of object for allergy list -->\n\n		  <ion-item [ngClass]="{allergyChosen: theSearch.isAllergySelectedByUser(allergy)}" *ngFor="let allergy of theSearch.getOptionsAllergies()">\n\n		    <ion-label><b>{{allergy}}</b>\n\n		    </ion-label>\n\n		    <ion-checkbox [checked] = "theSearch.isAllergySelectedByUser(allergy)" (ionChange)="theSearch.addAllergy(allergy)"></ion-checkbox>\n\n		  </ion-item>\n\n		</ion-list>   	\n\n		\n\n	  </div>\n\n    </div> \n\n\n\n\n\n	<input type="radio" name="tabs" id="tab2">\n\n    <div class="tab-label-content" id="tab2-content">\n\n      <label class="tab-label" for="tab2"> Dietary Requirements </label>\n\n      <div class="tab-content">\n\n\n\n      		<ion-list inset>\n\n			<!-- used list of strings instead of object for diet list -->\n\n		  <ion-item [ngClass]="{dietaryChosen: theSearch.isDietarySelectedByUser(diet)}" *ngFor="let diet of theSearch.getOptionsDietary()">\n\n		    <ion-label><b>{{diet}}</b>\n\n		    </ion-label>\n\n		    <ion-checkbox [checked] = "theSearch.isDietarySelectedByUser(diet)" (ionChange)="theSearch.addDietary(diet)"></ion-checkbox>\n\n		  </ion-item>\n\n		</ion-list>   	\n\n		\n\n	  </div>\n\n    </div>\n\n\n\n <div class="slide"></div>\n\n\n\n</div>\n\n\n\n</ion-content>\n\n\n\n\n\n<ion-footer no border>\n\n	<div id = "button">\n\n		<button ion-button round full color="danger" (click) = "goToCardDisplay()" id="seeRecipes">SEE RECIPES</button>\n\n 	</div>\n\n</ion-footer>\n\n\n\n     \n\n     \n\n    \n\n      	'/*ion-inline-end:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\allergies\allergies.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__providers_searchparams_searchparams__["a" /* SearchparamsProvider */]])
     ], AllergiesPage);
