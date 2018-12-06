@@ -1,11 +1,5 @@
 import { Component } from "@angular/core";
-import {
-  IonicPage,
-  NavController,
-  NavParams,
-  LoadingController,
-  Loading
-} from "ionic-angular";
+import { IonicPage, NavController, NavParams, LoadingController,Loading} from "ionic-angular";
 import { HomePage } from "../home/home";
 // import { AllergiesPage } from "../allergies/allergies";
 import { RecipeInfoPage } from "../recipe-info/recipe-info";
@@ -32,20 +26,15 @@ export class CardDisplayPage {
   // recipeData: any;
   recipeList = new Array();
 
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    public loadingCtrl: LoadingController,
-    public restProvider: RestProvider,
-    public theSearch: SearchparamsProvider
-  ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController,
+    public restProvider: RestProvider, public theSearch: SearchparamsProvider) {
     // create a component loading indicator in constructor
     this.loading = loadingCtrl.create({
       content: "Please wait..."
     });
   }
-  /* Clicking on a card displays that particular object on recipe-info display and passed the object
-  via navparam */
+  /* Clicking on a card displays that particular object on recipe-info display and passes the object
+  via navparam. The declared selectedObject points to the clickObject and that's what's passed */
   displayJSONdata(clickedObject: any): void {
     this.selectedObject = clickedObject;
     console.log(
@@ -55,19 +44,18 @@ export class CardDisplayPage {
       ourParam: this.selectedObject
     });
   }
-  // used ng init rather than the constructor to start data request
+  /* used ngOnInit rather than the constructor to start data request. Best pratice to have logic
+   done in ngOnInit - also easier to test and debug (angular docs) */
   ngOnInit() {
-    this.loading.present(); // added a spinner
+    this.loading.present(); // added a spinner - Brona
 
-    this.subscription = this.restProvider // request can be cancelled if you store the subscription
+    this.subscription = this.restProvider 
       .getDataFromAPI(
-        // request the api with the search terms
-        this.theSearch.searchInput,
-        this.theSearch.searchAllergies,
-        this.theSearch.searchDietary
-      )
-      .pipe(
-        // transform the data to the right shape
+        // request the api with the search terms as paramaters
+        this.theSearch.searchInput, this.theSearch.searchAllergies, this.theSearch.searchDietary
+      ) 
+      .pipe( //pipe() lets us combine multiple functions into a single function
+        // transform the data to the right shape 
         mergeMap(x => x.hits),
         map(x => x.recipe),
         map(x => ({
@@ -83,7 +71,7 @@ export class CardDisplayPage {
       .subscribe(
         data => (this.recipeList = data), // set the data when it arrives
         err => {
-          console.error("here", err); // sometimes the api gives an error, should handle this with a message to user maybe
+          console.error("here", err); 
           this.loading.dismiss();
 
           // this.navCtrl.pop();
@@ -92,7 +80,7 @@ export class CardDisplayPage {
       );
   }
   ngOnDestroy() {
-    this.subscription.unsubscribe(); // cancel the request to clean up
+    this.subscription.unsubscribe(); // cancel the request to clean up (have to manually unsubscribe now that we're not using promise)
   }
 
     public goToHome()

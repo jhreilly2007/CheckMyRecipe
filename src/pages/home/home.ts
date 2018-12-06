@@ -21,11 +21,9 @@ export class HomePage {
   ionViewDidLoad() {
     console.log("ionViewDidLoad HomePage");
   }
-  /**
-   *
-   * @param term is taken from the search template and added to the search params provider.
-   * splits value of term, and then joins these with a comma.
-   * when search button is clicked navigation goes to allergies page
+  /* term is taken from the search template and added to the search params provider.
+    splits value of term, and then joins these with a comma.
+    when search button is clicked navigation goes to allergies page
    */
   search(term: string) {
     if (!term) { // added notification if search is not filled in
