@@ -25697,7 +25697,7 @@ page-allergies input[type="radio"][name="tabs"] {
 }
 
 page-allergies input[type="radio"][name="tabs"]:checked + .tab-label-content .tab-label {
-  color: #00B9DF;
+  color: #FF2233;
   border-left: #ddd solid 1px;
   border-right: #ddd solid 1px;
   font-weight: 500;
@@ -25720,7 +25720,6 @@ page-allergies input[type="radio"][name="tabs"]:first-of-type:checked ~ .slide {
 }
 
 page-allergies .tab-label {
-  cursor: pointer;
   color: #111;
   background-color: #fff;
   -webkit-box-sizing: border-box;
@@ -25745,8 +25744,8 @@ page-allergies .tab-label {
 }
 
 page-allergies .slide {
-  background: #00B9DF;
-  width: calc(100% / 2);
+  background: #ff2233;
+  width: 50%;
   height: 4px;
   position: absolute;
   left: 0;
@@ -25765,6 +25764,10 @@ page-allergies .tab-label-content .tab-content {
   left: 16px;
   line-height: 130%;
   display: none;
+}
+
+page-allergies #seeRecipes {
+  margin-bottom: 20%;
 }
 
 page-card-display .card-background-page ion-card {
@@ -25803,7 +25806,6 @@ page-card-display .card-background-page .card-subtitle {
   background-color: #ffffff;
   border-radius: 5%;
   color: black;
-  padding: 5%;
   text-align: center;
 }
 
