@@ -15,14 +15,13 @@ export class RestProvider {
 
   constructor(public http: HttpClient) {}
 
-  /**
-   * Creates an observable that returns the search of the edamam api
-   * @param searchTerm the term to search for
-   * @param allergy the list of allergies
-   * @param dietary the list of diet requirements
-   */
+  
   getDataFromAPI(searchTerm, allergy = [], dietary = []) {
-    const health = [...allergy, ...dietary].join("&health="); // health cannot be ',' seperated for the api
+    /* used array spread syntax (expands the array into it's elements) and join on &health= as per url
+     search params */
+    const health = [...allergy, ...dietary].join("&health=");
+    /*get the JSON data with user selected search terms (ingredients are in searchTerm, allergies 
+    and dietary choices in health) */
     return this.http.get<EdamamResponse>(
       `${this.OUR_REST_API_URL}${searchTerm ? "&q=" + searchTerm : ""}${
         health ? "&health=" + health : ""
@@ -30,8 +29,9 @@ export class RestProvider {
     );
   }
 }
-/**
- * Types from Edamam api - shape of the JSON response
+/*
+  Types from Edamam api - shape of the JSON response
+  Used a website to convert the JSON response to typescript interfaces
  */
 export interface Params {
   sane: any[];

@@ -31,15 +31,15 @@ var map = {
 	],
 	"../pages/card-display/card-display.module": [
 		405,
-		2
+		0
 	],
 	"../pages/faq/faq.module": [
 		406,
-		1
+		2
 	],
 	"../pages/recipe-info/recipe-info.module": [
 		407,
-		0
+		1
 	]
 };
 function webpackAsyncContext(req) {
@@ -523,7 +523,7 @@ var CardDisplayPage = /** @class */ (function () {
     };
     CardDisplayPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: "page-card-display",template:/*ion-inline-start:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\card-display\card-display.html"*/'s<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Search Results</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n	<!-- Display JSON data from API on cards -->\n\n		<ion-card *ngFor="let result of recipeList" (click)="displayJSONdata(result)">\n\n			<img src={{result.icon}}>\n\n			<ion-card-content>\n\n				<ion-card-title>\n\n					{{result.name}}\n\n				</ion-card-title>\n\n				<ion-row>\n\n				<ion-col text-left>				\n\n				<p>{{result.source}}</p>\n\n			</ion-col>\n\n			<ion-col text-right>\n\n				<!-- display calories rounded down -->\n\n				<p>{{result.nutrients.ENERC_KCAL.quantity|number:\'1.0-0\'}} calories</p>		\n\n			</ion-col>\n\n		</ion-row>\n\n			\n\n		</ion-card-content>\n\n	</ion-card>\n\n\n\n\n\n<!-- if no results are returned from the search - display message to user -->\n\n<ion-card ng-if="recipeList.length<=0" text-center (click)="goToHome()">\n\n			<div><h1>Your search didn\'t return any results.</h1><h2> Click here to start over. Be careful with spelling!</h2></div>\n\n</ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\card-display\card-display.html"*/
+            selector: "page-card-display",template:/*ion-inline-start:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\card-display\card-display.html"*/'s<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Search Results</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n	<!-- Display JSON data from API on cards -->\n\n		<ion-card *ngFor="let result of recipeList" (click)="displayJSONdata(result)">\n\n			<img src={{result.icon}}>\n\n			<ion-card-content>\n\n				<ion-card-title>\n\n					{{result.name}}\n\n				</ion-card-title>\n\n				<ion-row>\n\n				<ion-col text-left>				\n\n				<p>{{result.source}}</p>\n\n			</ion-col>\n\n			<ion-col text-right>\n\n				<!-- display calories rounded down -->\n\n				<p>{{result.nutrients.ENERC_KCAL.quantity|number:\'1.0-0\'}} calories</p>		\n\n			</ion-col>\n\n		</ion-row>\n\n			\n\n		</ion-card-content>\n\n	</ion-card>\n\n\n\n<!-- need to fix this - it\'s showing regardless of whether we have results or not -->\n\n<!-- if no results are returned from the search - display message to user -->\n\n<ion-card ng-if="recipeList.length<=0" text-center (click)="goToHome()">\n\n			<div><h1>Your search didn\'t return any results.</h1><h2> Click here to start over. Be careful with spelling!</h2></div>\n\n</ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\card-display\card-display.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
