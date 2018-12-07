@@ -25794,6 +25794,12 @@ page-card-display .card-background-page .card-subtitle {
   color: #fff;
 }
 
+page-home .homePageImages {
+  width: 60%;
+  display: block;
+  margin: 10% auto 30% auto;
+}
+
 .clearfix {
   clear: both;
 }
