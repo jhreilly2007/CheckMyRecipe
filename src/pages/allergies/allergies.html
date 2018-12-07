@@ -38,7 +38,7 @@
 		  <ion-item [ngClass]="{allergyChosen: theSearch.isAllergySelectedByUser(allergy)}" *ngFor="let allergy of theSearch.getOptionsAllergies()">
 		    <ion-label><b>{{allergy}}</b>
 		    </ion-label>
-		    <ion-checkbox [checked] = "theSearch.isAllergySelectedByUser(allergy)" (ionChange)="theSearch.addAllergy(allergy)"></ion-checkbox>
+		    <ion-checkbox [checked] = "theSearch.isAllergySelectedByUser(allergy)" color="danger" (ionChange)="theSearch.addAllergy(allergy)"></ion-checkbox>
 		  </ion-item>
 		</ion-list> 
 		
