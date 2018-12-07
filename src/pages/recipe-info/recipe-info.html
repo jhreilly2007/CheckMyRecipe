@@ -21,23 +21,28 @@
       <ion-col col-12 col-md-6>
                  
         <h1>{{passedObject.name}}</h1>
+
+             <ion-row>
+               <ion-icon name="time">{{passedObject.time}} minutes</ion-icon>
+            </ion-row>
+
            <h2> Ingredients: </h2>
+
+
            <ion-row *ngFor="let ingredient of passedObject.ingredients">{{ingredient}}</ion-row>
               
-             
-             <ion-row>
-
-               <ion-icon name="time">{{passedObject.time}}</ion-icon>
-             </ion-row>
 
               <!--<a button href="{{passedObject.url}}" clear>
                 <button ion-button full color="danger">Check My Recipe</button></a>-->
-          <ion-item>
+          
+            <ion-item>
               <button ion-button full color="danger" (click)="openUrl(passedObject.url)">Check My Recipe</button>
-              </ion-item>
 
-                  
-            </ion-col>
+              <p><i>Recipe available from the {{passedObject.source}} website</i></p>
+             </ion-item>
+
+
+          </ion-col>
 
             
   </ion-row>
