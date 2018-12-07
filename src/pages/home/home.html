@@ -8,17 +8,19 @@
 
 <ion-content padding>
   <ion-item>
-    <img class="rounded img-fluid homePageImages" src="../assets/imgs/cmrlogo.PNG"/>
-    <p>Search over 70,000 recipes!</p>
+    <img class="rounded img-fluid" id ="logo" src="../assets/imgs/cmrlogo.PNG"/>
+    <p id="homePageP">Search over 70,000 recipes!</p>
   </ion-item>
   <ion-item>
+    
     <ion-input #term type="text" placeholder="Enter ingredients or meals here..."></ion-input>
     <!--when button is clicked search method called with value of input box-->
   </ion-item>
 
-  <ion-item>
-    <button ion-button round color="light" (click)="search(term.value)">Search</button>
-  </ion-item>
+
+  <div id="homeButton">
+    <button ion-button round full color="danger" (click)="search(term.value)">Search</button>
+   </div>
 <!-- changed the button style -->
 
 <div id="edamam-badge" data-color="transparent" style="position:fixed; bottom:30px; display:block; margin:auto"></div>

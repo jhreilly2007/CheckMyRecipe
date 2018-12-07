@@ -1,8 +1,18 @@
 page-home {
 	
-	.homePageImages {
+	#logo {
 	  width: 60%;
 	  display: block;
 	  margin: 10% auto 30% auto;
+	}
+
+	#homePageP {
+	  text-align: center;
+	  margin: -20% 0 40% 0; 
+	}
+
+	#homeButton {
+	  margin: 8% auto 0 auto;
+	  width: 50%;
 	}
 }

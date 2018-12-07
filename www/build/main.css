@@ -25794,10 +25794,20 @@ page-card-display .card-background-page .card-subtitle {
   color: #fff;
 }
 
-page-home .homePageImages {
+page-home #logo {
   width: 60%;
   display: block;
   margin: 10% auto 30% auto;
+}
+
+page-home #homePageP {
+  text-align: center;
+  margin: -20% 0 40% 0;
+}
+
+page-home #homeButton {
+  margin: 8% auto 0 auto;
+  width: 50%;
 }
 
 .clearfix {
