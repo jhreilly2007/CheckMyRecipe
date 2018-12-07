@@ -38,13 +38,4 @@ export class HomePage {
       this.navCtrl.push(AllergiesPage);
     }
   }
-  public goToRecipeInfo() {
-    this.navCtrl.push(RecipeInfoPage);
-  }
-  public goToCardDisplay() {
-    this.navCtrl.push(CardDisplayPage);
-  }
-  public goToAllergies() {
-    this.navCtrl.push(AllergiesPage);
-  }
 }
