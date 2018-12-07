@@ -64,6 +64,7 @@ export class CardDisplayPage {
           icon: x.image,
           source: x.source,
           ingredients: x.ingredientLines,
+          time: x.totalTime,
           nutrients: x.totalNutrients
         })),
         toArray()
