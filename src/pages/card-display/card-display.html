@@ -31,7 +31,7 @@ s<ion-header>
 
 <!-- need to fix this - it's showing regardless of whether we have results or not -->
 <!-- if no results are returned from the search - display message to user -->
-<ion-card ng-if="recipeList.length<=0" text-center (click)="goToHome()">
+<ion-card *ngIf="recipeList.length<=0" text-center (click)="goToHome()">
 			<div><h1>Your search didn't return any results.</h1><h2> Click here to start over. Be careful with spelling!</h2></div>
 </ion-card>
 </ion-content>

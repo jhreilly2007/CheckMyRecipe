@@ -46,8 +46,8 @@ public navigateBack(){ // changed navigation to return to previous page rather t
 /*public goToURL(){
    // need something here to navigate outside of app (follow eternal url)
    }*/
-public openUrl(){ 
-  window.open("http://www.google.ie"); 
+public openUrl(theUrl){ 
+  window.open(theUrl); 
 }
 
 }
