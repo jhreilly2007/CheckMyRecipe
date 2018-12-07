@@ -25,18 +25,17 @@
            <ion-row *ngFor="let ingredient of passedObject.ingredients">{{ingredient}}</ion-row>
               
              
+             <ion-row>
 
-              <a button href="{{passedObject.url}}" clear>
-                <button ion-button full color="danger">Check My Recipe</button></a>
-               
+               <ion-icon name="time">{{passedObject.time}}</ion-icon>
+             </ion-row>
 
-
-
-              <ion-item>
-              <button ion-button full (click)="openUrl(passedObject.url)">Check My Recipe</button>
+              <!--<a button href="{{passedObject.url}}" clear>
+                <button ion-button full color="danger">Check My Recipe</button></a>-->
+          <ion-item>
+              <button ion-button full color="danger" (click)="openUrl(passedObject.url)">Check My Recipe</button>
               </ion-item>
 
-              <!--<h1>{{passedObject.url}}</h1>-->
                   
             </ion-col>
 
@@ -48,7 +47,7 @@
       <ion-col col-4 col-md-2>
         
         <div class = "line">
-          <p class = "word"> {{passedObject.nutrients.ENERC_KCAL.label|titlecase}}  </p>
+          <p class = "word"> <!--{{passedObject.nutrients.ENERC_KCAL.label|titlecase}}--> Calories  </p>
         </div>
         <p class = "info">{{passedObject.nutrients.ENERC_KCAL.quantity|number:'1.0-0'}}{{passedObject.nutrients.ENERC_KCAL.unit}}</p>
 
@@ -56,7 +55,7 @@
 
       <ion-col col-4 col-md-2>
         <div class = "line">
-          <p class = "word"> {{passedObject.nutrients.SUGAR.label|titlecase}} </p>
+          <p class = "word"> <!--{{passedObject.nutrients.SUGAR.label|titlecase}}--> Sugar </p>
         </div>
         <p class = "info"> {{passedObject.nutrients.SUGAR.quantity|number:'1.0-0'}}{{passedObject.nutrients.SUGAR.unit}}</p>
       </ion-col>
@@ -64,7 +63,7 @@
       
       <ion-col col-4 col-md-2>
          <div class = "line">
-          <p class = "word"> {{passedObject.nutrients.FAT.label|titlecase}} </p>
+          <p class = "word"> <!--{{passedObject.nutrients.FAT.label|titlecase}}--> Fat </p>
         </div>
         <p class = "info"> {{passedObject.nutrients.FAT.quantity|number:'1.0-0'}}{{passedObject.nutrients.FAT.unit}}</p>
       </ion-col>
@@ -72,7 +71,7 @@
 
       <ion-col col-4 col-md-2>
           <div class = "line">
-           <p class = "word"> {{passedObject.nutrients.CHOCDF.label|titlecase}} </p>
+           <p class = "word"> <!--{{passedObject.nutrients.CHOCDF.label|titlecase}}--> Carbs </p>
         </div>
         <p class = "info"> {{passedObject.nutrients.CHOCDF.quantity|number:'1.0-0'}}{{passedObject.nutrients.CHOCDF.unit}} </p>
       </ion-col>
@@ -80,7 +79,7 @@
 
       <ion-col col-4 col-md-2>
            <div class = "line">
-           <p class = "word"> {{passedObject.nutrients.PROCNT.label|titlecase}} </p>
+           <p class = "word"> <!--{{passedObject.nutrients.PROCNT.label|titlecase}}--> Protein </p>
         </div>
         <p class = "info"> {{passedObject.nutrients.PROCNT.quantity|number:'1.0-0'}}{{passedObject.nutrients.PROCNT.unit}} </p>
       </ion-col>
@@ -98,16 +97,16 @@
      <!--<div class = "clearfix">-->
 
 
-        <ion-fab top right>
+        <!--<ion-fab top right>
     <button ion-fab mini><ion-icon name="menu"></ion-icon></button>
        <ion-fab-list side="left">
       <button ion-fab><ion-icon name="exit"></ion-icon></button>
       <button ion-fab><ion-icon name="help"></ion-icon></button>
         <!-- updated navigations -->
-       <button ion-fab (click) = "navigateBack()"><ion-icon name="backspace"></ion-icon></button>
+       <!--<button ion-fab (click) = "navigateBack()"><ion-icon name="backspace"></ion-icon></button>
        <button ion-fab (click) = "goToHome()"><ion-icon name="home"></ion-icon></button>
     </ion-fab-list>
-      </ion-fab>
+      </ion-fab>-->
 
   </ion-grid>
 </ion-content>
