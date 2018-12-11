@@ -25810,6 +25810,14 @@ page-home #homeButton {
   width: 50%;
 }
 
+page-home #edamam-badge {
+  left: 50%;
+  bottom: 20px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+
 .clearfix {
   clear: both;
 }
