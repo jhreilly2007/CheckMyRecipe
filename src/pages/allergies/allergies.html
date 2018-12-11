@@ -22,6 +22,11 @@
 		    <ion-label><b>{{diet}}</b>
 		    </ion-label>
 		    <ion-checkbox [checked] = "theSearch.isDietarySelectedByUser(diet)" (ionChange)="theSearch.addDietary(diet)"></ion-checkbox>
+		</ion-item>
+		    <ion-item *ngFor="let item of theSearch.getBlockedOptionsDietary()">
+		    	<ion-label><b>{{item}}</b>
+		    	</ion-label>
+		    	<ion-checkbox disabled="true"></ion-checkbox>
 		  </ion-item>
 		</ion-list>
 			
@@ -38,7 +43,12 @@
 		  <ion-item [ngClass]="{allergyChosen: theSearch.isAllergySelectedByUser(allergy)}" *ngFor="let allergy of theSearch.getOptionsAllergies()">
 		    <ion-label><b>{{allergy}}</b>
 		    </ion-label>
-		    <ion-checkbox [checked] = "theSearch.isAllergySelectedByUser(allergy)" color="danger" (ionChange)="theSearch.addAllergy(allergy)"></ion-checkbox>
+		    <ion-checkbox [checked] = "theSearch.isAllergySelectedByUser(allergy)" (ionChange)="theSearch.addAllergy(allergy)"></ion-checkbox>
+		  </ion-item>
+		     <ion-item *ngFor="let item of theSearch.getBlockedOptionsAllergies()">
+		    	<ion-label><b>{{item}}</b>
+		    	</ion-label>
+		    	<ion-checkbox disabled="true"></ion-checkbox>
 		  </ion-item>
 		</ion-list> 
 		

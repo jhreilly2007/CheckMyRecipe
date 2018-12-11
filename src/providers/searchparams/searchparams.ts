@@ -12,6 +12,8 @@ export class SearchparamsProvider {
   //checklist options for allergies.html
   optionsAllergies: any[] = new Array();
   optionsDietary: any[] = new Array();
+  optionsBlockedAllergies: any[] = new Array();
+  optionsBlockedDietary: any[] = new Array();
 
   //user choices arrays
   searchAllergies: any[] = new Array();
@@ -37,6 +39,20 @@ export class SearchparamsProvider {
       "tree-nut-free",
       //"wheat-free"
     ];
+    this.optionsBlockedAllergies = [
+      "celery-free",
+      "crustacean-free",
+      "dairy-free",
+      "egg-free",
+      "fish-free",
+      "gluten-free",
+      "lupine-free",
+      "mustard-free",
+      "sesame-free",
+      "shellfish-free",
+      "soy-free",
+      "wheat-free"
+    ]
     this.optionsDietary = [
       //"kosher",
       //"paleo",
@@ -46,6 +62,11 @@ export class SearchparamsProvider {
       "sugar-conscious",
       "alcohol-free"
     ];
+    this.optionsBlockedDietary = [
+      "kosher",
+      "paleo",
+      "pescatarian"
+    ]
   }
   /* get methods for the options for the interface */
 
@@ -55,6 +76,14 @@ export class SearchparamsProvider {
 
   public getOptionsDietary() {
     return this.optionsDietary;
+  }
+
+  public getBlockedOptionsAllergies() {
+    return this.optionsBlockedAllergies;
+  }
+
+  public getBlockedOptionsDietary() {
+    return this.optionsBlockedDietary;
   }
 
   /* allergy methods */
