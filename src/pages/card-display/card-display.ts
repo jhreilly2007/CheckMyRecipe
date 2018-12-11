@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams, LoadingController,Loading} from "ionic-angular";
 import { HomePage } from "../home/home";
-// import { AllergiesPage } from "../allergies/allergies";
 import { RecipeInfoPage } from "../recipe-info/recipe-info";
 import { RestProvider } from "../../providers/rest/rest";
 import { SearchparamsProvider } from "../../providers/searchparams/searchparams";
@@ -25,6 +24,7 @@ export class CardDisplayPage {
   loading: Loading;
   // recipeData: any;
   recipeList = new Array();
+  fetching = false; // tracks if this component is currently fetching. Initially set to false
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController,
     public restProvider: RestProvider, public theSearch: SearchparamsProvider) {
@@ -48,7 +48,8 @@ export class CardDisplayPage {
    done in ngOnInit - also easier to test and debug (angular docs) */
   ngOnInit() {
     this.loading.present(); // added a spinner - Brona
-
+    
+    this.fetching = true; // before fetching data set fetching field to true 
     this.subscription = this.restProvider 
       .getDataFromAPI(
         // request the api with the search terms as paramaters
@@ -72,12 +73,13 @@ export class CardDisplayPage {
       .subscribe(
         data => (this.recipeList = data), // set the data when it arrives
         err => {
-          console.error("here", err); 
           this.loading.dismiss();
-
-          // this.navCtrl.pop();
+          this.fetching = false; // if error set fetching to false
         },
-        () => this.loading.dismiss() // remove the spinner when request is complete
+        () => {
+          this.loading.dismiss(); // remove the spinner when request is complete
+          this.fetching = false; // if we get a successful response set fetching to false
+        }
       );
   }
   ngOnDestroy() {
@@ -86,7 +88,7 @@ export class CardDisplayPage {
 
     public goToHome()
   {
-    this.navCtrl.push(HomePage);
+    this.navCtrl.setPages([{page:HomePage}]);
   }
 
 }

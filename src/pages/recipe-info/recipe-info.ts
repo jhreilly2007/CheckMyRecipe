@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { AllergiesPage } from '../allergies/allergies';
 import { CardDisplayPage } from '../card-display/card-display';
@@ -20,7 +20,7 @@ export class RecipeInfoPage {
 
   passedObject: any;    //the object passed by navparams
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   this.passedObject = this.navParams.get('ourParam'); 
   }
 
@@ -47,8 +47,23 @@ public navigateBack(){ // changed navigation to return to previous page rather t
    // need something here to navigate outside of app (follow eternal url)
    }*/
 public openUrl(theUrl){ 
-  window.open(theUrl); 
+  const confirm = this.alertCtrl.create({ // added alert when leaving page Brona
+    title: 'Alert',
+    message: 'You are about to navigate to a website out of this app',
+    buttons: [
+      {
+        text: 'Dismiss',
+        handler: () => {}
+      },
+      {
+        text: 'Confirm',
+        handler: () => {
+          window.open(theUrl); 
+        }
+      }
+    ]
+  });
+  confirm.present();
 }
 
 }
-
