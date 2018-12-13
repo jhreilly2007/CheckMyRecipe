@@ -32,7 +32,10 @@
 	</ion-card>
 
 <!-- if we are not currently fetching and no results are returned from the search - display message to user -->
-<ion-card *ngIf="!fetching && recipeList.length<=0" text-center (click)="goToHome()">
-			<div><h1>No results found.</h1><h2> Click here to start over. Be careful with spelling!</h2></div>
-</ion-card>
-</ion-content>
+<ion-content padding>
+	<div id="noResults" *ngIf="!fetching && recipeList.length<=0" text-center>
+			<h1>Sorry, we didn't find any recipes for you this time. </h1>
+		 <button id="tryAgainButton" ion-button round full color="danger" (click)="goToHome()">Try Again</button>
+		<p text-center> Be careful with spelling! </p>
+		</div>
+	</ion-content>

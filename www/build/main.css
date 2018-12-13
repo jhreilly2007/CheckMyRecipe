@@ -25794,6 +25794,11 @@ page-card-display .card-background-page .card-subtitle {
   color: #fff;
 }
 
+page-card-display #tryAgainButton {
+  margin: 8% auto 0 auto;
+  width: 50%;
+}
+
 page-home #logo {
   width: 60%;
   display: block;

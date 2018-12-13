@@ -26,15 +26,15 @@ var map = {
 		4
 	],
 	"../pages/allergies/allergies.module": [
-		406,
+		404,
 		3
 	],
 	"../pages/card-display/card-display.module": [
-		404,
+		405,
 		2
 	],
 	"../pages/faq/faq.module": [
-		405,
+		406,
 		1
 	],
 	"../pages/recipe-info/recipe-info.module": [
@@ -226,8 +226,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(402);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_allergies_allergies__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_card_display_card_display__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_allergies_allergies__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_card_display_card_display__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_faq_faq__ = __webpack_require__(247);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_recipe_info_recipe_info__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_about_about__ = __webpack_require__(246);
@@ -270,9 +270,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/allergies/allergies.module#AllergiesPageModule', name: 'AllergiesPage', segment: 'allergies', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/card-display/card-display.module#CardDisplayPageModule', name: 'CardDisplayPage', segment: 'card-display', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/faq/faq.module#FaqPageModule', name: 'FaqPage', segment: 'faq', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/allergies/allergies.module#AllergiesPageModule', name: 'AllergiesPage', segment: 'allergies', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/recipe-info/recipe-info.module#RecipeInfoPageModule', name: 'RecipeInfoPage', segment: 'recipe-info', priority: 'low', defaultHistory: [] }
                     ]
                 })
@@ -353,7 +353,7 @@ var MyApp = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__allergies_allergies__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__allergies_allergies__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_searchparams_searchparams__ = __webpack_require__(60);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -573,6 +573,69 @@ var SearchparamsProvider = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AllergiesPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__card_display_card_display__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__recipe_info_recipe_info__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_searchparams_searchparams__ = __webpack_require__(60);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the AllergiesPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AllergiesPage = /** @class */ (function () {
+    function AllergiesPage(navCtrl, navParams, theSearch) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.theSearch = theSearch;
+    }
+    AllergiesPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AllergiesPage');
+    };
+    AllergiesPage.prototype.goToHome = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
+    };
+    AllergiesPage.prototype.goToCardDisplay = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__card_display_card_display__["a" /* CardDisplayPage */]);
+    };
+    AllergiesPage.prototype.goToRecipeInfo = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__recipe_info_recipe_info__["a" /* RecipeInfoPage */]);
+    };
+    AllergiesPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-allergies',template:/*ion-inline-start:"C:\Users\Karen\Documents\HDip\CS385\CheckMyRecipe\src\pages\allergies\allergies.html"*/'<ion-header>\n\n  <ion-navbar color="t_white">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>  \n\n    <ion-title> Preferences </ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<div class="tab-wrap">\n\n  \n\n    <input type="radio" name="tabs" id="tab1" checked>\n\n    <div class="tab-label-content" id="tab1-content">\n\n      <label class="tab-label" for="tab1"> Dietary Requirements </label>\n\n      <div class="tab-content">\n\n      	<ion-list inset>\n\n			<!-- used list of strings instead of object for diet list -->\n\n		  <ion-item [ngClass]="{dietaryChosen: theSearch.isDietarySelectedByUser(diet)}" *ngFor="let diet of theSearch.getOptionsDietary()">\n\n		    <ion-label><b>{{diet}}</b>\n\n		    </ion-label>\n\n		    <ion-checkbox [checked] = "theSearch.isDietarySelectedByUser(diet)" (ionChange)="theSearch.addDietary(diet)"></ion-checkbox>\n\n		</ion-item>\n\n		    <ion-item *ngFor="let item of theSearch.getBlockedOptionsDietary()">\n\n		    	<ion-label><b>{{item}}</b>\n\n		    	</ion-label>\n\n		    	<ion-checkbox disabled="true"></ion-checkbox>\n\n		  </ion-item>\n\n		</ion-list>\n\n			\n\n	  </div>\n\n    </div> \n\n\n\n\n\n	<input type="radio" name="tabs" id="tab2">\n\n    <div class="tab-label-content" id="tab2-content">\n\n      <label class="tab-label" for="tab2"> Allergies </label>\n\n      <div class="tab-content">\n\n      	<ion-list inset>\n\n			<!-- used list of strings instead of object for allergy list -->\n\n		  <ion-item [ngClass]="{allergyChosen: theSearch.isAllergySelectedByUser(allergy)}" *ngFor="let allergy of theSearch.getOptionsAllergies()">\n\n		    <ion-label><b>{{allergy}}</b>\n\n		    </ion-label>\n\n		    <ion-checkbox [checked] = "theSearch.isAllergySelectedByUser(allergy)" (ionChange)="theSearch.addAllergy(allergy)"></ion-checkbox>\n\n		  </ion-item>\n\n		     <ion-item *ngFor="let item of theSearch.getBlockedOptionsAllergies()">\n\n		    	<ion-label><b>{{item}}</b>\n\n		    	</ion-label>\n\n		    	<ion-checkbox disabled="true"></ion-checkbox>\n\n		  </ion-item>\n\n		</ion-list> \n\n		\n\n	  </div>\n\n    </div>\n\n\n\n <div class="slide"></div>\n\n\n\n</div>\n\n\n\n</ion-content>\n\n\n\n\n\n<ion-footer no border>\n\n	<div id = "button">\n\n		<button ion-button round full color="danger" (click) = "goToCardDisplay()" id="seeRecipes">SEE RECIPES</button>\n\n 	</div>\n\n</ion-footer>  '/*ion-inline-end:"C:\Users\Karen\Documents\HDip\CS385\CheckMyRecipe\src\pages\allergies\allergies.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__providers_searchparams_searchparams__["a" /* SearchparamsProvider */]])
+    ], AllergiesPage);
+    return AllergiesPage;
+}());
+
+//# sourceMappingURL=allergies.js.map
+
+/***/ }),
+
+/***/ 69:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CardDisplayPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(30);
@@ -670,78 +733,15 @@ var CardDisplayPage = /** @class */ (function () {
     };
     CardDisplayPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: "page-card-display",template:/*ion-inline-start:"C:\Users\Karen\Documents\HDip\CS385\CheckMyRecipe\src\pages\card-display\card-display.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Search Results</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n	<!-- Display JSON data from API on cards -->\n\n		<ion-card *ngFor="let result of recipeList" (click)="displayJSONdata(result)">\n\n			<img src={{result.icon}}>\n\n			<ion-card-content>\n\n				<ion-card-title>\n\n					{{result.name}}\n\n				</ion-card-title>\n\n				<ion-row>\n\n				<ion-col text-left>				\n\n\n\n				<p><ion-icon name="time"></ion-icon> {{result.time}} minutes</p>\n\n\n\n			</ion-col>\n\n			<ion-col text-right>\n\n				<!-- display calories rounded down -->\n\n				<p>{{result.nutrients.ENERC_KCAL.quantity|number:\'1.0-0\'}} calories</p>		\n\n			</ion-col>\n\n		</ion-row>\n\n			\n\n		</ion-card-content>\n\n	</ion-card>\n\n\n\n<!-- if we are not currently fetching and no results are returned from the search - display message to user -->\n\n<ion-card *ngIf="!fetching && recipeList.length<=0" text-center (click)="goToHome()">\n\n			<div><h1>No results found.</h1><h2> Click here to start over. Be careful with spelling!</h2></div>\n\n</ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Karen\Documents\HDip\CS385\CheckMyRecipe\src\pages\card-display\card-display.html"*/
+            selector: "page-card-display",template:/*ion-inline-start:"C:\Users\Karen\Documents\HDip\CS385\CheckMyRecipe\src\pages\card-display\card-display.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Search Results</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n	<!-- Display JSON data from API on cards -->\n\n		<ion-card *ngFor="let result of recipeList" (click)="displayJSONdata(result)">\n\n			<img src={{result.icon}}>\n\n			<ion-card-content>\n\n				<ion-card-title>\n\n					{{result.name}}\n\n				</ion-card-title>\n\n				<ion-row>\n\n				<ion-col text-left>				\n\n\n\n				<p><ion-icon name="time"></ion-icon> {{result.time}} minutes</p>\n\n\n\n			</ion-col>\n\n			<ion-col text-right>\n\n				<!-- display calories rounded down -->\n\n				<p>{{result.nutrients.ENERC_KCAL.quantity|number:\'1.0-0\'}} calories</p>		\n\n			</ion-col>\n\n		</ion-row>\n\n			\n\n		</ion-card-content>\n\n	</ion-card>\n\n\n\n<!-- if we are not currently fetching and no results are returned from the search - display message to user -->\n\n<ion-content padding>\n\n	<div id="noResults" *ngIf="!fetching && recipeList.length<=0" text-center>\n\n			<h1>Sorry, we didn\'t find any recipes for you this time. </h1>\n\n		 <button id="tryAgainButton" ion-button round full color="danger" (click)="goToHome()">Try Again</button>\n\n		<p text-center> Be careful with spelling! </p>\n\n		</div>\n\n	</ion-content>\n\n'/*ion-inline-end:"C:\Users\Karen\Documents\HDip\CS385\CheckMyRecipe\src\pages\card-display\card-display.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__["a" /* RestProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__["a" /* RestProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__providers_searchparams_searchparams__["a" /* SearchparamsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_searchparams_searchparams__["a" /* SearchparamsProvider */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_searchparams_searchparams__["a" /* SearchparamsProvider */]])
     ], CardDisplayPage);
     return CardDisplayPage;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=card-display.js.map
-
-/***/ }),
-
-/***/ 69:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AllergiesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__card_display_card_display__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__recipe_info_recipe_info__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_searchparams_searchparams__ = __webpack_require__(60);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-/**
- * Generated class for the AllergiesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AllergiesPage = /** @class */ (function () {
-    function AllergiesPage(navCtrl, navParams, theSearch) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.theSearch = theSearch;
-    }
-    AllergiesPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AllergiesPage');
-    };
-    AllergiesPage.prototype.goToHome = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
-    };
-    AllergiesPage.prototype.goToCardDisplay = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__card_display_card_display__["a" /* CardDisplayPage */]);
-    };
-    AllergiesPage.prototype.goToRecipeInfo = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__recipe_info_recipe_info__["a" /* RecipeInfoPage */]);
-    };
-    AllergiesPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-allergies',template:/*ion-inline-start:"C:\Users\Karen\Documents\HDip\CS385\CheckMyRecipe\src\pages\allergies\allergies.html"*/'<ion-header>\n\n  <ion-navbar color="t_white">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>  \n\n    <ion-title> Preferences </ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<div class="tab-wrap">\n\n  \n\n    <input type="radio" name="tabs" id="tab1" checked>\n\n    <div class="tab-label-content" id="tab1-content">\n\n      <label class="tab-label" for="tab1"> Dietary Requirements </label>\n\n      <div class="tab-content">\n\n      	<ion-list inset>\n\n			<!-- used list of strings instead of object for diet list -->\n\n		  <ion-item [ngClass]="{dietaryChosen: theSearch.isDietarySelectedByUser(diet)}" *ngFor="let diet of theSearch.getOptionsDietary()">\n\n		    <ion-label><b>{{diet}}</b>\n\n		    </ion-label>\n\n		    <ion-checkbox [checked] = "theSearch.isDietarySelectedByUser(diet)" (ionChange)="theSearch.addDietary(diet)"></ion-checkbox>\n\n		</ion-item>\n\n		    <ion-item *ngFor="let item of theSearch.getBlockedOptionsDietary()">\n\n		    	<ion-label><b>{{item}}</b>\n\n		    	</ion-label>\n\n		    	<ion-checkbox disabled="true"></ion-checkbox>\n\n		  </ion-item>\n\n		</ion-list>\n\n			\n\n	  </div>\n\n    </div> \n\n\n\n\n\n	<input type="radio" name="tabs" id="tab2">\n\n    <div class="tab-label-content" id="tab2-content">\n\n      <label class="tab-label" for="tab2"> Allergies </label>\n\n      <div class="tab-content">\n\n      	<ion-list inset>\n\n			<!-- used list of strings instead of object for allergy list -->\n\n		  <ion-item [ngClass]="{allergyChosen: theSearch.isAllergySelectedByUser(allergy)}" *ngFor="let allergy of theSearch.getOptionsAllergies()">\n\n		    <ion-label><b>{{allergy}}</b>\n\n		    </ion-label>\n\n		    <ion-checkbox [checked] = "theSearch.isAllergySelectedByUser(allergy)" (ionChange)="theSearch.addAllergy(allergy)"></ion-checkbox>\n\n		  </ion-item>\n\n		     <ion-item *ngFor="let item of theSearch.getBlockedOptionsAllergies()">\n\n		    	<ion-label><b>{{item}}</b>\n\n		    	</ion-label>\n\n		    	<ion-checkbox disabled="true"></ion-checkbox>\n\n		  </ion-item>\n\n		</ion-list> \n\n		\n\n	  </div>\n\n    </div>\n\n\n\n <div class="slide"></div>\n\n\n\n</div>\n\n\n\n</ion-content>\n\n\n\n\n\n<ion-footer no border>\n\n	<div id = "button">\n\n		<button ion-button round full color="danger" (click) = "goToCardDisplay()" id="seeRecipes">SEE RECIPES</button>\n\n 	</div>\n\n</ion-footer>  '/*ion-inline-end:"C:\Users\Karen\Documents\HDip\CS385\CheckMyRecipe\src\pages\allergies\allergies.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__providers_searchparams_searchparams__["a" /* SearchparamsProvider */]])
-    ], AllergiesPage);
-    return AllergiesPage;
-}());
-
-//# sourceMappingURL=allergies.js.map
 
 /***/ }),
 
@@ -753,8 +753,8 @@ var AllergiesPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__allergies_allergies__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__card_display_card_display__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__allergies_allergies__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__card_display_card_display__ = __webpack_require__(69);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
