@@ -74,17 +74,17 @@ export class CardDisplayPage {
         data => (this.recipeList = data), // set the data when it arrives
         err => {
           this.loading.dismiss();
-          this.fetching = false; // if error set fetching to false
+         // this.fetching = false; // if error set fetching to false
         },
         () => {
           this.loading.dismiss(); // remove the spinner when request is complete
-          this.fetching = false; // if we get a successful response set fetching to false
+        //  this.fetching = false; // if we get a successful response set fetching to false
         }
       );
   }
-  /* ionViewDidEnter() {
+   ionViewWillEnter() {
     this.fetching = false;
-  }; */
+  }; 
 
   ionViewWillLeave() {
     this.subscription.unsubscribe(); // cancel the request to clean up (have to manually unsubscribe now that we're not using promise)
