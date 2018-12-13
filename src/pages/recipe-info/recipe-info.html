@@ -23,7 +23,7 @@
         <h1>{{passedObject.name}}</h1>
 
              <ion-row>
-               <ion-icon name="time"></ion-icon> {{passedObject.time}} minutes
+               <p><ion-icon name="time"></ion-icon> {{passedObject.time}} minutes</p>
             </ion-row>
 
            <h2> Ingredients: </h2>
@@ -36,7 +36,7 @@
                 <button ion-button full color="danger">Check My Recipe</button></a>-->
           
             <ion-item>
-              <button ion-button full color="danger" (click)="openUrl(passedObject.url)">Check My Recipe</button>
+              <button ion-button round full color="danger" (click)="openUrl(passedObject.url)">Check My Recipe</button>
 
               <p><i>Recipe available from the {{passedObject.source}} website</i></p>
              </ion-item>

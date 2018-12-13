@@ -46,7 +46,7 @@ export class CardDisplayPage {
   }
   /* used ngOnInit rather than the constructor to start data request. Best pratice to have logic
    done in ngOnInit - also easier to test and debug (angular docs) */
-  ngOnInit() {
+  ionViewDidLoad() {
     this.loading.present(); // added a spinner - Brona
     
     this.fetching = true; // before fetching data set fetching field to true 
@@ -82,13 +82,17 @@ export class CardDisplayPage {
         }
       );
   }
-  ngOnDestroy() {
+  /* ionViewDidEnter() {
+    this.fetching = false;
+  }; */
+
+  ionViewWillLeave() {
     this.subscription.unsubscribe(); // cancel the request to clean up (have to manually unsubscribe now that we're not using promise)
   }
 
     public goToHome()
   {
-    this.navCtrl.setPages([{page:HomePage}]);
+    this.navCtrl.push(HomePage);
   }
 
 }
