@@ -653,16 +653,15 @@ var CardDisplayPage = /** @class */ (function () {
         function (// set the data when it arrives
             err) {
             _this.loading.dismiss();
-            // this.fetching = false; // if error set fetching to false
+            _this.fetching = false; // if error set fetching to false
         }, function () {
             _this.loading.dismiss(); // remove the spinner when request is complete
-            //  this.fetching = false; // if we get a successful response set fetching to false
+            _this.fetching = false; // if we get a successful response set fetching to false
         });
     };
-    CardDisplayPage.prototype.ionViewWillEnter = function () {
-        this.fetching = false;
-    };
-    ;
+    /*ionViewWillEnter() {
+     this.fetching = false;
+   }; */
     CardDisplayPage.prototype.ionViewWillLeave = function () {
         this.subscription.unsubscribe(); // cancel the request to clean up (have to manually unsubscribe now that we're not using promise)
     };
