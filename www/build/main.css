@@ -25828,7 +25828,7 @@ page-home #edamam-badge {
 }
 
 .line {
-  background-color: #ffcd94;
+  background-color: #dddddd;
   border-radius: 5%;
 }
 
@@ -25841,6 +25841,8 @@ page-home #edamam-badge {
 
 .word {
   color: black;
+  font-weight: bold;
+  color: #333;
   padding: 5%;
   text-align: center;
 }
@@ -25878,4 +25880,9 @@ h2 {
   font-size: 30px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: oblique;
+}
+
+#button {
+  width: 50%;
+  margin: auto;
 }
