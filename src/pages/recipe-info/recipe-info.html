@@ -3,49 +3,50 @@
 
     <ion-title>{{passedObject.name}}</ion-title>
 
+    </ion-navbar>
 
-  </ion-navbar>
-</ion-header>
+  </ion-header>
 
-<ion-content>
+    
+  <ion-content>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col col-12 col-md-6>
+    <ion-grid>
 
-        <img src="{{passedObject.icon}}" style="float:left;width:100%;height:325px;"/>
+      <ion-row>
 
-      </ion-col>
-
-
-      <ion-col col-12 col-md-6>
-                 
-        <h1>{{passedObject.name}}</h1>
-
-             <ion-row>
-               <p><ion-icon name="time"></ion-icon> {{passedObject.time}} minutes</p>
-            </ion-row>
-
-           <h2> Ingredients: </h2>
-
-
-           <ion-row *ngFor="let ingredient of passedObject.ingredients">{{ingredient}}</ion-row>
-              
-
-              <!--<a button href="{{passedObject.url}}" clear>
-                <button ion-button full color="danger">Check My Recipe</button></a>-->
-          
-            <ion-item>
-              <div id = "button">
-                  <button ion-button round full color="danger" (click)="openUrl(passedObject.url)">Check My Recipe</button>
-              </div>
-             </ion-item>
-
+        <ion-col col-12 col-md-6>
+            <!--{{passedObject.icon}} displays image of selected recipe-->
+           <img src="{{passedObject.icon}}" style="float:left;width:100%;height:325px;"/>
 
           </ion-col>
 
-            
-  </ion-row>
+
+         <ion-col col-12 col-md-6>
+                 
+             <h1>{{passedObject.name}}</h1>
+
+           <ion-row>
+             <!--{{passedObject.time}} displays time taken with a clock icon-->
+              <p><ion-icon name="time"></ion-icon> {{passedObject.time}} minutes</p>
+             </ion-row>
+
+               <h2> Ingredients: </h2>
+
+               <!--{{passedObject.ingredients}} uses a loop to display list of ingredients-->
+           <ion-row *ngFor="let ingredient of passedObject.ingredients">{{ingredient}}</ion-row>
+
+          
+            <ion-item>
+              <!--{{passedObject.url}} uses the window.open method to open url in a new window
+                passed passedObject.url to the method to convert to hyperlink-->
+              <div id = "button">
+                  <button ion-button round full color="danger" (click)="openUrl(passedObject.url)">Check My Recipe</button>
+                </div>
+             </ion-item>
+
+            </ion-col>
+
+        </ion-row>
 
 
     <ion-row>
@@ -99,22 +100,10 @@
  
     </ion-row>
       
-     <!--<div class = "clearfix">-->
-
-     <ion-fab top right>
-     <button ion-fab mini color="danger" (click) = "goToHome()"><ion-icon name="home"></ion-icon></button>
-     </ion-fab>
-
-        <!--<ion-fab top right>
-    <button ion-fab mini><ion-icon name="menu"></ion-icon></button>
-       <ion-fab-list side="left">
-      <button ion-fab><ion-icon name="exit"></ion-icon></button>
-      <button ion-fab><ion-icon name="help"></ion-icon></button>
-        <!-- updated navigations -->
-       <!--<button ion-fab (click) = "navigateBack()"><ion-icon name="backspace"></ion-icon></button>
-       <button ion-fab (click) = "goToHome()"><ion-icon name="home"></ion-icon></button>
-    </ion-fab-list>
-      </ion-fab>-->
+    
+      <ion-fab top right>
+       <button ion-fab mini color="danger" (click) = "goToHome()"><ion-icon name="home"></ion-icon></button>
+      </ion-fab>
 
   </ion-grid>
 </ion-content>

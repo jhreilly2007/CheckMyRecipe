@@ -21,7 +21,7 @@
 		  <ion-item [ngClass]="{dietaryChosen: theSearch.isDietarySelectedByUser(diet)}" *ngFor="let diet of theSearch.getOptionsDietary()">
 		    <ion-label><b>{{diet}}</b>
 		    </ion-label>
-		    <ion-checkbox [checked] = "theSearch.isDietarySelectedByUser(diet)" (ionChange)="theSearch.addDietary(diet)"></ion-checkbox>
+		    <ion-checkbox  color="danger" [checked] = "theSearch.isDietarySelectedByUser(diet)" (ionChange)="theSearch.addDietary(diet)"></ion-checkbox>
 		</ion-item>
 		    <ion-item *ngFor="let item of theSearch.getBlockedOptionsDietary()">
 		    	<ion-label><b>{{item}}</b>
