@@ -9,9 +9,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AllergiesPage } from '../pages/allergies/allergies';
 import { CardDisplayPage } from '../pages/card-display/card-display';
-import { FaqPage } from '../pages/faq/faq';
 import { RecipeInfoPage } from '../pages/recipe-info/recipe-info';
-import { AboutPage } from '../pages/about/about';
 import { RestProvider } from '../providers/rest/rest';
 import { SearchparamsProvider } from '../providers/searchparams/searchparams';
 
@@ -19,8 +17,7 @@ import { SearchparamsProvider } from '../providers/searchparams/searchparams';
   declarations: [
     MyApp,
     HomePage, AllergiesPage,
-    CardDisplayPage, FaqPage, RecipeInfoPage,
-    AboutPage
+    CardDisplayPage, RecipeInfoPage
   ],
   imports: [
     BrowserModule, HttpClientModule,
@@ -30,8 +27,7 @@ import { SearchparamsProvider } from '../providers/searchparams/searchparams';
   entryComponents: [
     MyApp,
     HomePage, AllergiesPage,
-    CardDisplayPage, FaqPage, RecipeInfoPage,
-    AboutPage
+    CardDisplayPage, RecipeInfoPage
   ],
   providers: [
     StatusBar,

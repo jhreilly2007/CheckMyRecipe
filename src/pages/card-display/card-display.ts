@@ -22,7 +22,6 @@ export class CardDisplayPage {
   subscription: Subscription;
   selectedObject: any;
   loading: Loading;
-  // recipeData: any;
   recipeList = new Array();
   fetching = false; // tracks if this component is currently fetching. Initially set to false
 
@@ -46,6 +45,7 @@ export class CardDisplayPage {
   }
   /* used ngOnInit rather than the constructor to start data request. Best pratice to have logic
    done in ngOnInit - also easier to test and debug (angular docs) */
+   //changed to ionViewDidLoad for practice in lifecycle hooks
   ionViewDidLoad() {
     this.loading.present(); // added a spinner - Brona
     
@@ -82,9 +82,7 @@ export class CardDisplayPage {
         }
       );
   }
-   /*ionViewWillEnter() {
-    this.fetching = false;
-  }; */
+ 
 
   ionViewWillLeave() {
     this.subscription.unsubscribe(); // cancel the request to clean up (have to manually unsubscribe now that we're not using promise)

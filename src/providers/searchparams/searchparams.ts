@@ -22,8 +22,10 @@ export class SearchparamsProvider {
   searchIngredientsString: string = "";
   searchHealthString: string = "";
 
+
+  //the commented options below are blocked in the free version of the API
   constructor() {
-    this.optionsAllergies = [   // disabled blocked search terms - Karen
+    this.optionsAllergies = [   
       //"celery-free",
       //"crustacean-free",
       //"dairy-free",
@@ -139,52 +141,4 @@ export class SearchparamsProvider {
     }
   }
 
-  //   /* return a boolean value to indicate if this allergiesObj
-  //      has been already selected by the user or not
-
-  // public checkIfAllergyIsSelected(allergiesObj)
-  // {
-
-  //   let index = this.searchAllergies.indexOf(allergiesObj, 0);
-
-  //   return (index > -1);   /* this will be true or false
-  // }
-
-  // // set arrays and strings from arrays (use in home and allergies)
-  //   public setSearchIngredientsString()
-  //   {
-  //   	if(this.searchIngredients.length !== 0){
-  //   		this.searchIngredientsString = this.searchIngredients[0];
-  //   	  for(int i = 1; i < this.searchIngredients.length; i++){
-  //   	  	this.searchIngredientsString = this.searchIngredientsString + "," + this.searchIngredients[i];
-  //   	  }
-  //   	}
-  //   }
-
-  //   public setSearchHealthString()
-  //   {
-  //   	if(this.searchAllergies.length !== 0){
-  //   		this.searchHealthString = this.searchAllergies[0].allergiesName;
-  //   	  for(int i = 1; i < this.searchAllergies.length; i++){
-  //   	  	this.searchHealthString = this.searchHealthString + "," + this.searchAllergies[i].allergiesName;
-  //   	  }
-  //   	}
-  //   	if(this.searchDietary.length !== 0){
-  //   		this.searchHealthString = this.searchHealthString + "," + this.searchDietary[0].dietaryName;
-  //   	  for(int i = 1; i < this.searchAllergies.length; i++){
-  //   	  	this.searchHealthString = this.searchHealthString + "," + this.searchDietary[i].dietaryName;
-  //   	  }
-  //   	}
-  //   }
-
-  // // clear all selections
-  //  public clearAllChoices()
-  //   {
-  //   	this.searchHealth = new Array();
-  //   }
-
-  // }
-  // */
-  //     multiple toppings*/
-  //   /* Delete a topping object, if it is in the array */
-}
+ 

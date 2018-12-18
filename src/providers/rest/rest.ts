@@ -32,7 +32,10 @@ export class RestProvider {
 /*
   Types from Edamam api - shape of the JSON response
   Used a website to convert the JSON response to typescript interfaces
+  The interfaces are only used at this point - in card-display.ts we
+  change the shape of the JSON respoinse and no longer use the below
  */
+
 export interface Params {
   sane: any[];
   q: string[];
