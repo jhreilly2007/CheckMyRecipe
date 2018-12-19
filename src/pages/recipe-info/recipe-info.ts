@@ -49,7 +49,7 @@ public navigateBack(){ // changed navigation to return to previous page rather t
 public openUrl(theUrl){ 
   const confirm = this.alertCtrl.create({ // added alert when leaving page Brona
     title: 'Alert',
-    message: 'You are about to navigate to a website out of this app',
+    message: `You are about to navigate to the website:<br/> "${theUrl}"<br/> which is outside of this app`,
     buttons: [
       {
         text: 'Dismiss',

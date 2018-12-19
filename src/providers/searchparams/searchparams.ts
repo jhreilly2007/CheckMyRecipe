@@ -140,5 +140,5 @@ export class SearchparamsProvider {
       return true;
     }
   }
-
+}
  

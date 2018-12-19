@@ -19,30 +19,27 @@
            <img src="{{passedObject.icon}}" style="float:left;width:100%;height:325px;"/>
 
           </ion-col>
-
-
          <ion-col col-12 col-md-6>
                  
              <h1>{{passedObject.name}}</h1>
 
            <ion-row>
              <!--{{passedObject.time}} displays time taken with a clock icon-->
-              <p><ion-icon name="time"></ion-icon> {{passedObject.time}} minutes</p>
-             </ion-row>
+              <ion-icon name="time"></ion-icon> &nbsp; {{passedObject.time}} minutes
+           </ion-row>
 
                <h2> Ingredients: </h2>
-
+               <p>
                <!--{{passedObject.ingredients}} uses a loop to display list of ingredients-->
            <ion-row *ngFor="let ingredient of passedObject.ingredients">{{ingredient}}</ion-row>
-
-          
-            <ion-item>
+               </p>
+            <ion-row>
               <!--{{passedObject.url}} uses the window.open method to open url in a new window
                 passed passedObject.url to the method to convert to hyperlink-->
               <div id = "button">
                   <button ion-button round full color="danger" (click)="openUrl(passedObject.url)">Check My Recipe</button>
                 </div>
-             </ion-item>
+             </ion-row>
 
             </ion-col>
 
