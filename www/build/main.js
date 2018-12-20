@@ -22,15 +22,15 @@ webpackEmptyAsyncContext.id = 139;
 
 var map = {
 	"../pages/allergies/allergies.module": [
-		401,
+		403,
 		2
 	],
 	"../pages/card-display/card-display.module": [
-		402,
+		401,
 		1
 	],
 	"../pages/recipe-info/recipe-info.module": [
-		403,
+		402,
 		0
 	]
 };
@@ -128,8 +128,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(400);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_allergies_allergies__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_card_display_card_display__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_allergies_allergies__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_card_display_card_display__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_recipe_info_recipe_info__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_rest_rest__ = __webpack_require__(186);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_searchparams_searchparams__ = __webpack_require__(60);
@@ -166,9 +166,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/allergies/allergies.module#AllergiesPageModule', name: 'AllergiesPage', segment: 'allergies', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/card-display/card-display.module#CardDisplayPageModule', name: 'CardDisplayPage', segment: 'card-display', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/recipe-info/recipe-info.module#RecipeInfoPageModule', name: 'RecipeInfoPage', segment: 'recipe-info', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/recipe-info/recipe-info.module#RecipeInfoPageModule', name: 'RecipeInfoPage', segment: 'recipe-info', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/allergies/allergies.module#AllergiesPageModule', name: 'AllergiesPage', segment: 'allergies', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
@@ -229,7 +229,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\brona\Documents\CS385PROJECT\CheckMyRecipe\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\brona\Documents\CS385PROJECT\CheckMyRecipe\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -247,7 +247,7 @@ var MyApp = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__allergies_allergies__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__allergies_allergies__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_searchparams_searchparams__ = __webpack_require__(60);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -292,7 +292,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: "page-home",template:/*ion-inline-start:"C:\Users\brona\Documents\CS385PROJECT\CheckMyRecipe\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Check My Recipe\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item>\n\n    <img class="rounded img-fluid" id ="logo" src="../assets/imgs/cmrlogo.PNG"/>\n\n    <p id="homePageP">Search over 2 million recipes!</p>\n\n  </ion-item>\n\n  <ion-item>\n\n    \n\n    <ion-input #term type="text" placeholder="Enter ingredients or meals here..."></ion-input>\n\n    <!--when button is clicked search method called with value of input box-->\n\n  </ion-item>\n\n\n\n\n\n  <div id="homeButton">\n\n    <button ion-button round full color="danger" (click)="search(term.value)">Search</button>\n\n   </div>\n\n<!-- changed the button style -->\n\n\n\n<div id="edamam-badge" data-color="transparent" style="position:fixed; bottom:30px; display:block; margin:auto"></div>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\brona\Documents\CS385PROJECT\CheckMyRecipe\src\pages\home\home.html"*/
+            selector: "page-home",template:/*ion-inline-start:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Check My Recipe\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-item>\n\n    <img class="rounded img-fluid" id ="logo" src="../assets/imgs/cmrlogo.PNG"/>\n\n    <p id="homePageP">Search over 2 million recipes!</p>\n\n  </ion-item>\n\n  <ion-item>\n\n    \n\n    <ion-input #term type="text" placeholder="Enter ingredients or meals here..."></ion-input>\n\n    <!--when button is clicked search method called with value of input box-->\n\n  </ion-item>\n\n\n\n\n\n  <div id="homeButton">\n\n    <button ion-button round full color="danger" (click)="search(term.value)">Search</button>\n\n   </div>\n\n<!-- changed the button style -->\n\n\n\n<div id="edamam-badge" data-color="transparent" style="position:fixed; bottom:30px; display:block; margin:auto"></div>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -468,69 +468,6 @@ var SearchparamsProvider = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AllergiesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__card_display_card_display__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__recipe_info_recipe_info__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_searchparams_searchparams__ = __webpack_require__(60);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-/**
- * Generated class for the AllergiesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AllergiesPage = /** @class */ (function () {
-    function AllergiesPage(navCtrl, navParams, theSearch) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.theSearch = theSearch;
-    }
-    AllergiesPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AllergiesPage');
-    };
-    AllergiesPage.prototype.goToHome = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
-    };
-    AllergiesPage.prototype.goToCardDisplay = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__card_display_card_display__["a" /* CardDisplayPage */]);
-    };
-    AllergiesPage.prototype.goToRecipeInfo = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__recipe_info_recipe_info__["a" /* RecipeInfoPage */]);
-    };
-    AllergiesPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-allergies',template:/*ion-inline-start:"C:\Users\brona\Documents\CS385PROJECT\CheckMyRecipe\src\pages\allergies\allergies.html"*/'<ion-header>\n\n  <ion-navbar color="t_white">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>  \n\n    <ion-title> Preferences </ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<div class="tab-wrap">\n\n  \n\n    <input type="radio" name="tabs" id="tab1" checked>\n\n    <div class="tab-label-content" id="tab1-content">\n\n      <label class="tab-label" for="tab1"> Dietary Requirements </label>\n\n      <div class="tab-content">\n\n      	<ion-list inset>\n\n			<!-- used list of strings instead of object for diet list -->\n\n		  <ion-item [ngClass]="{dietaryChosen: theSearch.isDietarySelectedByUser(diet)}" *ngFor="let diet of theSearch.getOptionsDietary()">\n\n		    <ion-label><b>{{diet}}</b>\n\n		    </ion-label>\n\n		    <ion-checkbox  color="danger" [checked] = "theSearch.isDietarySelectedByUser(diet)" (ionChange)="theSearch.addDietary(diet)"></ion-checkbox>\n\n		</ion-item>\n\n		    <ion-item *ngFor="let item of theSearch.getBlockedOptionsDietary()">\n\n		    	<ion-label><b>{{item}}</b>\n\n		    	</ion-label>\n\n		    	<ion-checkbox disabled="true"></ion-checkbox>\n\n		  </ion-item>\n\n		</ion-list>\n\n			\n\n	  </div>\n\n    </div> \n\n\n\n\n\n	<input type="radio" name="tabs" id="tab2">\n\n    <div class="tab-label-content" id="tab2-content">\n\n      <label class="tab-label" for="tab2"> Allergies </label>\n\n      <div class="tab-content">\n\n      	<ion-list inset>\n\n			<!-- used list of strings instead of object for allergy list -->\n\n		  <ion-item [ngClass]="{allergyChosen: theSearch.isAllergySelectedByUser(allergy)}" *ngFor="let allergy of theSearch.getOptionsAllergies()">\n\n		    <ion-label><b>{{allergy}}</b>\n\n		    </ion-label>\n\n		    <ion-checkbox color = "danger" [checked] = "theSearch.isAllergySelectedByUser(allergy)" (ionChange)="theSearch.addAllergy(allergy)"></ion-checkbox>\n\n		  </ion-item>\n\n		     <ion-item *ngFor="let item of theSearch.getBlockedOptionsAllergies()">\n\n		    	<ion-label><b>{{item}}</b>\n\n		    	</ion-label>\n\n		    	<ion-checkbox disabled="true"></ion-checkbox>\n\n		  </ion-item>\n\n		</ion-list> \n\n		\n\n	  </div>\n\n    </div>\n\n\n\n <div class="slide"></div>\n\n\n\n</div>\n\n\n\n</ion-content>\n\n\n\n\n\n<ion-footer no border>\n\n	<div id = "button">\n\n		<button ion-button round full color="danger" (click) = "goToCardDisplay()" id="seeRecipes">See Recipes</button>\n\n 	</div>\n\n</ion-footer>  '/*ion-inline-end:"C:\Users\brona\Documents\CS385PROJECT\CheckMyRecipe\src\pages\allergies\allergies.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__providers_searchparams_searchparams__["a" /* SearchparamsProvider */]])
-    ], AllergiesPage);
-    return AllergiesPage;
-}());
-
-//# sourceMappingURL=allergies.js.map
-
-/***/ }),
-
-/***/ 69:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CardDisplayPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
@@ -625,7 +562,7 @@ var CardDisplayPage = /** @class */ (function () {
     };
     CardDisplayPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: "page-card-display",template:/*ion-inline-start:"C:\Users\brona\Documents\CS385PROJECT\CheckMyRecipe\src\pages\card-display\card-display.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Search Results</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n\n\n<!-- Display JSON data from API on cards -->\n\n<ion-content padding>\n\n	<ion-card *ngFor="let result of recipeList" (click)="displayJSONdata(result)">\n\n			<img src={{result.icon}}>\n\n			<ion-card-content>\n\n				<ion-card-title>\n\n					{{result.name}}\n\n				</ion-card-title>\n\n				<ion-row>\n\n				<ion-col text-left>				\n\n\n\n				<p><ion-icon name="time"></ion-icon> {{result.time}} minutes</p>\n\n\n\n			</ion-col>\n\n			<ion-col text-right>\n\n				<!-- display calories rounded down -->\n\n				<p>{{result.nutrients.ENERC_KCAL.quantity|number:\'1.0-0\'}} calories</p>		\n\n			</ion-col>\n\n		</ion-row>\n\n			\n\n		</ion-card-content>\n\n	</ion-card>\n\n</ion-content>\n\n<!-- if we are not currently fetching and no results are returned from the search - display message to user -->\n\n<div id="noResults" *ngIf="!fetching && recipeList.length<=0" text-center>\n\n	<ion-content padding>\n\n			<h1>Sorry, we didn\'t find any recipes for you this time. </h1>\n\n		 <button id="tryAgainButton" ion-button round full color="danger" (click)="goToHome()">Try Again</button>\n\n		<p text-center> Be careful with spelling! </p>\n\n	</ion-content>\n\n</div>\n\n'/*ion-inline-end:"C:\Users\brona\Documents\CS385PROJECT\CheckMyRecipe\src\pages\card-display\card-display.html"*/
+            selector: "page-card-display",template:/*ion-inline-start:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\card-display\card-display.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Search Results</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n\n\n<!-- Display JSON data from API on cards -->\n\n<ion-content padding>\n\n	<ion-card *ngFor="let result of recipeList" (click)="displayJSONdata(result)">\n\n			<img src={{result.icon}}>\n\n			<ion-card-content>\n\n				<ion-card-title>\n\n					{{result.name}}\n\n				</ion-card-title>\n\n				<ion-row>\n\n				<ion-col text-left>				\n\n\n\n				<p><ion-icon name="time"></ion-icon> {{result.time}} minutes</p>\n\n\n\n			</ion-col>\n\n			<ion-col text-right>\n\n				<!-- display calories rounded down -->\n\n				<p>{{result.nutrients.ENERC_KCAL.quantity|number:\'1.0-0\'}} calories</p>		\n\n			</ion-col>\n\n		</ion-row>\n\n			\n\n		</ion-card-content>\n\n	</ion-card>\n\n</ion-content>\n\n<!-- if we are not currently fetching and no results are returned from the search - display message to user -->\n\n<div id="noResults" *ngIf="!fetching && recipeList.length<=0" text-center>\n\n	<ion-content padding>\n\n			<h1>Sorry, we didn\'t find any recipes for you this time. </h1>\n\n		 <button id="tryAgainButton" ion-button round full color="danger" (click)="goToHome()">Try Again</button>\n\n		<p text-center> Be careful with spelling! </p>\n\n	</ion-content>\n\n</div>\n\n'/*ion-inline-end:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\card-display\card-display.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_searchparams_searchparams__["a" /* SearchparamsProvider */]])
@@ -637,6 +574,69 @@ var CardDisplayPage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 69:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AllergiesPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__card_display_card_display__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__recipe_info_recipe_info__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_searchparams_searchparams__ = __webpack_require__(60);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the AllergiesPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AllergiesPage = /** @class */ (function () {
+    function AllergiesPage(navCtrl, navParams, theSearch) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.theSearch = theSearch;
+    }
+    AllergiesPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AllergiesPage');
+    };
+    AllergiesPage.prototype.goToHome = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
+    };
+    AllergiesPage.prototype.goToCardDisplay = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__card_display_card_display__["a" /* CardDisplayPage */]);
+    };
+    AllergiesPage.prototype.goToRecipeInfo = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__recipe_info_recipe_info__["a" /* RecipeInfoPage */]);
+    };
+    AllergiesPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-allergies',template:/*ion-inline-start:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\allergies\allergies.html"*/'<ion-header>\n\n  <ion-navbar color="t_white">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>  \n\n    <ion-title> Preferences </ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<!-- Create a div that will \'wrap\' the allergies and dietary requirements tabs -->\n\n<div class="tab-wrapper">\n\n  	\n\n  	<!-- Tabs each positioned absolute, relative to the tab-wrapper, each 50% width -->\n\n    <input type="radio" name="tabs" id="tab1" checked>\n\n    <div class="tab-label-content" id="tab1-content">\n\n\n\n    	<!-- The name to appear on tab 1 -->\n\n      <label class="tab-label" for="tab1"> Dietary Requirements </label>\n\n\n\n      <!-- The content that will appear on tab 1 -->\n\n      <div class="tab-content">\n\n      	<ion-list inset>\n\n			<!-- used list of strings instead of object for diet list. A for loop displays each of the items from the API in turn-->\n\n		  <ion-item [ngClass]="{dietaryChosen: theSearch.isDietarySelectedByUser(diet)}" *ngFor="let diet of theSearch.getOptionsDietary()">\n\n		    <ion-label><b>{{diet}}</b>\n\n		    </ion-label>\n\n		    <!-- The checkbox component from ionic, first checks if box is already checked and then checks / unchecks accordingly -->\n\n		    <ion-checkbox  color="danger" [checked] = "theSearch.isDietarySelectedByUser(diet)" (ionChange)="theSearch.addDietary(diet)"></ion-checkbox>\n\n		</ion-item>\n\n			<!-- For loop to display greyed out options -->\n\n		    <ion-item *ngFor="let item of theSearch.getBlockedOptionsDietary()">\n\n		    	<ion-label><b>{{item}}</b>\n\n		    	</ion-label>\n\n		    	<ion-checkbox disabled="true"></ion-checkbox>\n\n		  </ion-item>\n\n		</ion-list>\n\n			\n\n	  </div>\n\n    </div> \n\n\n\n\n\n	<input type="radio" name="tabs" id="tab2">\n\n    <div class="tab-label-content" id="tab2-content">\n\n    	<!-- The name to appear on tab 2 -->\n\n      <label class="tab-label" for="tab2"> Allergies </label>\n\n      <div class="tab-content">\n\n      	<ion-list inset>\n\n			<!-- used list of strings instead of object for allergy list. A for loop displays each of the items from the API in turn-->\n\n		  <ion-item [ngClass]="{allergyChosen: theSearch.isAllergySelectedByUser(allergy)}" *ngFor="let allergy of theSearch.getOptionsAllergies()">\n\n		    <ion-label><b>{{allergy}}</b>\n\n		    </ion-label>\n\n		    <!-- The checkbox component from ionic, first checks if box is already checked and then checks / unchecks accordingly -->\n\n		    <ion-checkbox color = "danger" [checked] = "theSearch.isAllergySelectedByUser(allergy)" (ionChange)="theSearch.addAllergy(allergy)"></ion-checkbox>\n\n		  </ion-item>\n\n		  	<!-- For loop to display greyed out options -->\n\n		     <ion-item *ngFor="let item of theSearch.getBlockedOptionsAllergies()">\n\n		    	<ion-label><b>{{item}}</b>\n\n		    	</ion-label>\n\n		    	<ion-checkbox disabled="true"></ion-checkbox>\n\n		  </ion-item>\n\n		</ion-list> \n\n		\n\n	  </div>\n\n    </div>\n\n\n\n  <!-- The div for the sliding bar, positioned absolute (relative to the tab wrapper) -->\n\n <div class="slider"></div>\n\n\n\n</div>\n\n\n\n</ion-content>\n\n\n\n\n\n<ion-footer no border>\n\n	<div id = "button">\n\n		<!-- Button that leads to the card display page to display the selected recipes -->\n\n		<button ion-button round full color="danger" (click) = "goToCardDisplay()" id="seeRecipes">See Recipes</button>\n\n 	</div>\n\n</ion-footer>  '/*ion-inline-end:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\allergies\allergies.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__providers_searchparams_searchparams__["a" /* SearchparamsProvider */]])
+    ], AllergiesPage);
+    return AllergiesPage;
+}());
+
+//# sourceMappingURL=allergies.js.map
+
+/***/ }),
+
 /***/ 70:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -645,8 +645,8 @@ var CardDisplayPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__allergies_allergies__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__card_display_card_display__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__allergies_allergies__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__card_display_card_display__ = __webpack_require__(68);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -713,7 +713,7 @@ var RecipeInfoPage = /** @class */ (function () {
     };
     RecipeInfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-recipe-info',template:/*ion-inline-start:"C:\Users\brona\Documents\CS385PROJECT\CheckMyRecipe\src\pages\recipe-info\recipe-info.html"*/'<ion-header>\n\n  <ion-navbar color="t_white">\n\n\n\n    <ion-title>{{passedObject.name}}</ion-title>\n\n\n\n    </ion-navbar>\n\n\n\n  </ion-header>\n\n\n\n    \n\n  <ion-content>\n\n\n\n    <ion-grid>\n\n\n\n      <ion-row>\n\n\n\n        <ion-col col-12 col-md-6>\n\n            <!--{{passedObject.icon}} displays image of selected recipe-->\n\n           <img src="{{passedObject.icon}}" style="float:left;width:100%;height:325px;"/>\n\n\n\n          </ion-col>\n\n         <ion-col col-12 col-md-6>\n\n                 \n\n             <h1>{{passedObject.name}}</h1>\n\n\n\n           <ion-row>\n\n             <!--{{passedObject.time}} displays time taken with a clock icon-->\n\n              <ion-icon name="time"></ion-icon> &nbsp; {{passedObject.time}} minutes\n\n           </ion-row>\n\n\n\n               <h2> Ingredients: </h2>\n\n               <p>\n\n               <!--{{passedObject.ingredients}} uses a loop to display list of ingredients-->\n\n           <ion-row *ngFor="let ingredient of passedObject.ingredients">{{ingredient}}</ion-row>\n\n               </p>\n\n            <ion-row>\n\n              <!--{{passedObject.url}} uses the window.open method to open url in a new window\n\n                passed passedObject.url to the method to convert to hyperlink-->\n\n              <div id = "button">\n\n                  <button ion-button round full color="danger" (click)="openUrl(passedObject.url)">Check My Recipe</button>\n\n                </div>\n\n             </ion-row>\n\n\n\n            </ion-col>\n\n\n\n        </ion-row>\n\n\n\n\n\n    <ion-row>\n\n      <ion-col col-4 col-md-2>\n\n        \n\n        <div class = "line">\n\n          <p class = "word"> <!--{{passedObject.nutrients.ENERC_KCAL.label|titlecase}}--> Calories  </p>\n\n        </div>\n\n        <p class = "info">{{passedObject.nutrients.ENERC_KCAL.quantity|number:\'1.0-0\'}}{{passedObject.nutrients.ENERC_KCAL.unit}}</p>\n\n\n\n      </ion-col>\n\n\n\n      <ion-col col-4 col-md-2>\n\n        <div class = "line">\n\n          <p class = "word"> <!--{{passedObject.nutrients.SUGAR.label|titlecase}}--> Sugar </p>\n\n        </div>\n\n        <p class = "info"> {{passedObject.nutrients.SUGAR.quantity|number:\'1.0-0\'}}{{passedObject.nutrients.SUGAR.unit}}</p>\n\n      </ion-col>\n\n\n\n      \n\n      <ion-col col-4 col-md-2>\n\n         <div class = "line">\n\n          <p class = "word"> <!--{{passedObject.nutrients.FAT.label|titlecase}}--> Fat </p>\n\n        </div>\n\n        <p class = "info"> {{passedObject.nutrients.FAT.quantity|number:\'1.0-0\'}}{{passedObject.nutrients.FAT.unit}}</p>\n\n      </ion-col>\n\n\n\n\n\n      <ion-col col-4 col-md-2>\n\n          <div class = "line">\n\n           <p class = "word"> <!--{{passedObject.nutrients.CHOCDF.label|titlecase}}--> Carbs </p>\n\n        </div>\n\n        <p class = "info"> {{passedObject.nutrients.CHOCDF.quantity|number:\'1.0-0\'}}{{passedObject.nutrients.CHOCDF.unit}} </p>\n\n      </ion-col>\n\n\n\n\n\n      <ion-col col-4 col-md-2>\n\n           <div class = "line">\n\n           <p class = "word"> <!--{{passedObject.nutrients.PROCNT.label|titlecase}}--> Protein </p>\n\n        </div>\n\n        <p class = "info"> {{passedObject.nutrients.PROCNT.quantity|number:\'1.0-0\'}}{{passedObject.nutrients.PROCNT.unit}} </p>\n\n      </ion-col>\n\n\n\n\n\n      <ion-col col-4 col-md-2>\n\n            <div class = "line">\n\n            <p class = "word"> Salt </p>\n\n        </div>\n\n        <p class = "info"> {{passedObject.nutrients.NA.quantity|number:\'1.0-0\'}}{{passedObject.nutrients.NA.unit}} </p>\n\n      </ion-col>\n\n \n\n    </ion-row>\n\n      \n\n    \n\n      <ion-fab top right>\n\n       <button ion-fab mini color="danger" (click) = "goToHome()"><ion-icon name="home"></ion-icon></button>\n\n      </ion-fab>\n\n\n\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"C:\Users\brona\Documents\CS385PROJECT\CheckMyRecipe\src\pages\recipe-info\recipe-info.html"*/,
+            selector: 'page-recipe-info',template:/*ion-inline-start:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\recipe-info\recipe-info.html"*/'<ion-header>\n\n  <ion-navbar color="t_white">\n\n\n\n    <ion-title>{{passedObject.name}}</ion-title>\n\n\n\n    </ion-navbar>\n\n\n\n  </ion-header>\n\n\n\n    \n\n  <ion-content>\n\n\n\n    <ion-grid>\n\n\n\n      <ion-row>\n\n\n\n        <ion-col col-12 col-md-6>\n\n            <!--{{passedObject.icon}} displays image of selected recipe-->\n\n           <img src="{{passedObject.icon}}" style="float:left;width:100%;height:325px;"/>\n\n\n\n          </ion-col>\n\n         <ion-col col-12 col-md-6>\n\n                 \n\n             <h1>{{passedObject.name}}</h1>\n\n\n\n           <ion-row>\n\n             <!--{{passedObject.time}} displays time taken with a clock icon-->\n\n              <ion-icon name="time"></ion-icon> &nbsp; {{passedObject.time}} minutes\n\n           </ion-row>\n\n\n\n               <h2> Ingredients: </h2>\n\n               <p>\n\n               <!--{{passedObject.ingredients}} uses a loop to display list of ingredients-->\n\n           <ion-row *ngFor="let ingredient of passedObject.ingredients">{{ingredient}}</ion-row>\n\n               </p>\n\n            <ion-row>\n\n              <!--{{passedObject.url}} uses the window.open method to open url in a new window\n\n                passed passedObject.url to the method to convert to hyperlink-->\n\n              <div id = "button">\n\n                  <button ion-button round full color="danger" (click)="openUrl(passedObject.url)">Check My Recipe</button>\n\n                </div>\n\n             </ion-row>\n\n\n\n            </ion-col>\n\n\n\n        </ion-row>\n\n\n\n\n\n    <ion-row>\n\n      <ion-col col-4 col-md-2>\n\n        \n\n        <div class = "line">\n\n          <p class = "word"> <!--{{passedObject.nutrients.ENERC_KCAL.label|titlecase}}--> Calories  </p>\n\n        </div>\n\n        <p class = "info">{{passedObject.nutrients.ENERC_KCAL.quantity|number:\'1.0-0\'}}{{passedObject.nutrients.ENERC_KCAL.unit}}</p>\n\n\n\n      </ion-col>\n\n\n\n      <ion-col col-4 col-md-2>\n\n        <div class = "line">\n\n          <p class = "word"> <!--{{passedObject.nutrients.SUGAR.label|titlecase}}--> Sugar </p>\n\n        </div>\n\n        <p class = "info"> {{passedObject.nutrients.SUGAR.quantity|number:\'1.0-0\'}}{{passedObject.nutrients.SUGAR.unit}}</p>\n\n      </ion-col>\n\n\n\n      \n\n      <ion-col col-4 col-md-2>\n\n         <div class = "line">\n\n          <p class = "word"> <!--{{passedObject.nutrients.FAT.label|titlecase}}--> Fat </p>\n\n        </div>\n\n        <p class = "info"> {{passedObject.nutrients.FAT.quantity|number:\'1.0-0\'}}{{passedObject.nutrients.FAT.unit}}</p>\n\n      </ion-col>\n\n\n\n\n\n      <ion-col col-4 col-md-2>\n\n          <div class = "line">\n\n           <p class = "word"> <!--{{passedObject.nutrients.CHOCDF.label|titlecase}}--> Carbs </p>\n\n        </div>\n\n        <p class = "info"> {{passedObject.nutrients.CHOCDF.quantity|number:\'1.0-0\'}}{{passedObject.nutrients.CHOCDF.unit}} </p>\n\n      </ion-col>\n\n\n\n\n\n      <ion-col col-4 col-md-2>\n\n           <div class = "line">\n\n           <p class = "word"> <!--{{passedObject.nutrients.PROCNT.label|titlecase}}--> Protein </p>\n\n        </div>\n\n        <p class = "info"> {{passedObject.nutrients.PROCNT.quantity|number:\'1.0-0\'}}{{passedObject.nutrients.PROCNT.unit}} </p>\n\n      </ion-col>\n\n\n\n\n\n      <ion-col col-4 col-md-2>\n\n            <div class = "line">\n\n            <p class = "word"> Salt </p>\n\n        </div>\n\n        <p class = "info"> {{passedObject.nutrients.NA.quantity|number:\'1.0-0\'}}{{passedObject.nutrients.NA.unit}} </p>\n\n      </ion-col>\n\n \n\n    </ion-row>\n\n      \n\n    \n\n      <ion-fab top right>\n\n       <button ion-fab mini color="danger" (click) = "goToHome()"><ion-icon name="home"></ion-icon></button>\n\n      </ion-fab>\n\n\n\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Teresa\Documents\Software Development\CS385\CheckMyRecipe\src\pages\recipe-info\recipe-info.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], RecipeInfoPage);

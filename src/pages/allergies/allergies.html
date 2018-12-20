@@ -10,19 +10,27 @@
 
 
 <ion-content padding>
-<div class="tab-wrap">
-  
+<!-- Create a div that will 'wrap' the allergies and dietary requirements tabs -->
+<div class="tab-wrapper">
+  	
+  	<!-- Tabs each positioned absolute, relative to the tab-wrapper, each 50% width -->
     <input type="radio" name="tabs" id="tab1" checked>
     <div class="tab-label-content" id="tab1-content">
+
+    	<!-- The name to appear on tab 1 -->
       <label class="tab-label" for="tab1"> Dietary Requirements </label>
+
+      <!-- The content that will appear on tab 1 -->
       <div class="tab-content">
       	<ion-list inset>
-			<!-- used list of strings instead of object for diet list -->
+			<!-- used list of strings instead of object for diet list. A for loop displays each of the items from the API in turn-->
 		  <ion-item [ngClass]="{dietaryChosen: theSearch.isDietarySelectedByUser(diet)}" *ngFor="let diet of theSearch.getOptionsDietary()">
 		    <ion-label><b>{{diet}}</b>
 		    </ion-label>
+		    <!-- The checkbox component from ionic, first checks if box is already checked and then checks / unchecks accordingly -->
 		    <ion-checkbox  color="danger" [checked] = "theSearch.isDietarySelectedByUser(diet)" (ionChange)="theSearch.addDietary(diet)"></ion-checkbox>
 		</ion-item>
+			<!-- For loop to display greyed out options -->
 		    <ion-item *ngFor="let item of theSearch.getBlockedOptionsDietary()">
 		    	<ion-label><b>{{item}}</b>
 		    	</ion-label>
@@ -36,15 +44,18 @@
 
 	<input type="radio" name="tabs" id="tab2">
     <div class="tab-label-content" id="tab2-content">
+    	<!-- The name to appear on tab 2 -->
       <label class="tab-label" for="tab2"> Allergies </label>
       <div class="tab-content">
       	<ion-list inset>
-			<!-- used list of strings instead of object for allergy list -->
+			<!-- used list of strings instead of object for allergy list. A for loop displays each of the items from the API in turn-->
 		  <ion-item [ngClass]="{allergyChosen: theSearch.isAllergySelectedByUser(allergy)}" *ngFor="let allergy of theSearch.getOptionsAllergies()">
 		    <ion-label><b>{{allergy}}</b>
 		    </ion-label>
+		    <!-- The checkbox component from ionic, first checks if box is already checked and then checks / unchecks accordingly -->
 		    <ion-checkbox color = "danger" [checked] = "theSearch.isAllergySelectedByUser(allergy)" (ionChange)="theSearch.addAllergy(allergy)"></ion-checkbox>
 		  </ion-item>
+		  	<!-- For loop to display greyed out options -->
 		     <ion-item *ngFor="let item of theSearch.getBlockedOptionsAllergies()">
 		    	<ion-label><b>{{item}}</b>
 		    	</ion-label>
@@ -55,7 +66,8 @@
 	  </div>
     </div>
 
- <div class="slide"></div>
+  <!-- The div for the sliding bar, positioned absolute (relative to the tab wrapper) -->
+ <div class="slider"></div>
 
 </div>
 
@@ -64,6 +76,7 @@
 
 <ion-footer no border>
 	<div id = "button">
+		<!-- Button that leads to the card display page to display the selected recipes -->
 		<button ion-button round full color="danger" (click) = "goToCardDisplay()" id="seeRecipes">See Recipes</button>
  	</div>
 </ion-footer>  

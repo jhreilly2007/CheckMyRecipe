@@ -25679,7 +25679,7 @@ page-allergies ion-header::after {
   border-bottom: #bbb solid 0.05rem;
 }
 
-page-allergies .tab-wrap {
+page-allergies .tab-wrapper {
   width: 100%;
   position: relative;
   display: -webkit-box;
@@ -25720,8 +25720,7 @@ page-allergies input[type="radio"][name="tabs"]:first-of-type:checked ~ .slide {
 }
 
 page-allergies .tab-label {
-  color: #111;
-  background-color: #fff;
+  width: 100%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: -webkit-inline-box;
@@ -25737,17 +25736,18 @@ page-allergies .tab-label {
   -ms-flex-pack: center;
   justify-content: center;
   text-align: center;
-  height: 56px;
+  height: 60px;
+  color: #111;
+  background-color: #fff;
   -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
-  width: 100%;
 }
 
-page-allergies .slide {
-  background: #ff2233;
-  width: 50%;
-  height: 4px;
+page-allergies .slider {
+  background: #f53d3d;
   position: absolute;
+  width: 50%;
+  height: 5px;
   left: 0;
   top: calc(100% - 2px);
   -webkit-transition: left 0.3s ease-out;
