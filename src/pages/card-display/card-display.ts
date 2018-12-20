@@ -90,7 +90,7 @@ export class CardDisplayPage {
 
     public goToHome()
   {
-    this.navCtrl.push(HomePage);
+    this.navCtrl.setRoot(HomePage);
   }
 
 }
